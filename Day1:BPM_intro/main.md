@@ -3,7 +3,6 @@
 ## Day 1: Welcome and Introduction to resources
 
 
-
 ## Today's Agenda
 
 | Day 1  (Monday 6/5) | General Introduction |
