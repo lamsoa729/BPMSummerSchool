@@ -6,6 +6,7 @@
 
 https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html -->
 
+
 ## Today's Agenda
 
 | Day 1  (Monday 6/5) | General Introduction |
@@ -20,6 +21,7 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html -->
 # Introduction
 
 ### Speaker: Mike Shelley
+
 
 # Go around presentations (~5 min/person)
 
