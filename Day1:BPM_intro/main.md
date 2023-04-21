@@ -2,9 +2,6 @@
 
 ## Day 1: Welcome and Introduction to resources
 
-<!-- https://github.com/flatironinstitute/aLENS
-
-https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html -->
 
 
 ## Today's Agenda
@@ -18,18 +15,24 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html -->
 | ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: Adam and Reza |
 
 
+
 # Introduction
 
 ### Speaker: Mike Shelley
+
 
 
 # Go around presentations (~5 min/person)
 
 ### Speakers: All of you
 
+
+
 # Intro to resources available from SCC to the Cluster
 
 ### Speaker: Geraud Krawezik
+
+
 
 # Tutorial
 
@@ -37,7 +40,7 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html -->
 
 
 
-### Implicit Fields
+<!-- ### Implicit Fields -->
 
 <!-- <img src="assets/physics_table.png" width="350" style="border:0;box-shadow:none"> -->
 
