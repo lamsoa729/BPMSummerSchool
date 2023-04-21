@@ -1,14 +1,14 @@
 # Biophysical Modeling Workshop
 
-## Day 1: Welcome and Introduction to resources
+## Day 2: aLENS introduction (part 1) 
 
-<!-- https://github.com/flatironinstitute/aLENS
+https://github.com/flatironinstitute/aLENS
 
-https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html -->
+https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 
 ## Today's Agenda
 
-| Day 1  (Monday 6/5) | General Introduction |
+| Day 2  (Monday 6/5) | General Introduction |
 | --- | --- |
 | 9:00AM | Welcome and Introduction of BPM and CCB <br /> Speaker: Mike Shelley|
 | 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: Students |

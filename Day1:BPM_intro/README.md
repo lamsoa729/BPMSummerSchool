@@ -1,6 +1,6 @@
-# Day 2: aLENS Introduction (part 1)
+# Day 1: BPM Introduction
 - Jun 5 2023
 - 9:00-12:00pm
-- Flatiron 9th floor classroom
+- Flatiron 8th floor classroom
 
-- [slides](https://github.com/lamsoa729/BPMSummerSchool/tree/main/Day1:BPM_intro/slides.html) ([source](main.md))
+- [slides](https://lamsoa729.github.io/BPMSummerSchool/Day1:BPM_intro/slides.html) ([source](main.md))
