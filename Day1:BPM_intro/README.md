@@ -3,4 +3,4 @@
 - 9:00-12:00pm
 - Flatiron 9th floor classroom
 
-- [slides](https://sciware.flatironinstitute.org/26_DataFormats/slides.html) ([source](main.md))
+- [slides](https://github.com/lamsoa729/BPMSummerSchool/Day1:BPM_intro/slides.html) ([source](main.md))
