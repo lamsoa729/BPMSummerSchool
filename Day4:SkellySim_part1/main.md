@@ -1,11 +1,11 @@
 # Biophysical Modeling Workshop
 
-## Day 4: SkellySim introduction (part 1) 
+## Day 4: SkellySim (part 1) 
 TODO: Add skellysim link
 
 ## Today's Agenda
 
-| Day 2  (Monday 6/5) | General Introduction |
+| Day 4  (Thursday 6/8) | SkellySim (part 1) |
 | --- | --- |
 | 9:00AM | Welcome and Introduction of BPM and CCB <br /> Speaker: Mike Shelley|
 | 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: Students |
