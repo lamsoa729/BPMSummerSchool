@@ -180,3 +180,48 @@ Visualizations are created and interacted with using paraview. Be sure to have t
     ![Screen Shot 2022-11-14 at 12.46.21 PM (2).png](images/Screen_Shot_2022-11-14_at_12.46.21_PM_(2).png)
 
 
+4. The quickest way to get interpretable visualizations is to load a pre-made ParaView state (.pvsm) file that has filters already applied to the data to be loaded. One has been provided in the MixMotorSliding example.
+    - In the upper left hand corner, click `Files -> Load State`.
+    
+        <img src="images/load_state.png" alt="load state" width="500"/>       
+    
+    - From the pop up window, navigate to the mounted Run directory on your local machine and click `MixMotorSliding.pvsm` and click OK.
+        
+        ![Screen Shot 2022-11-14 at 4.36.07 PM.png](images/Screen_Shot_2022-11-14_at_4.36.07_PM.png)
+        
+
+5. In Load State Options choose ‘Search files under specified directory. Data Directory should populate with the correct run directory on your local machine. Select ‘Only Use Files In Data Directory’ and press OK.
+    
+    <img src="images/Screen_Shot_2022-11-14_at_4.40.43_PM.png" alt="Screen Shot 2022-11-14 at 4.40.43 PM.png" width="500"/>       
+
+    
+6. Run visualization using run button at the top of the screen.
+    
+    ![Screen Shot 2022-11-14 at 4.53.41 PM.png](images/Screen_Shot_2022-11-14_at_4.53.41_PM.png)
+
+    
+7. Objects in the simulation are shown on the left-hand bar and can be turned on and off by clicking on the eye icon next the the names. (The more objects shown, the slower the visualization will run)
+    
+    <img src="images/Screen_Shot_2022-11-14_at_4.57.11_PM.png" alt="Screen Shot 2022-11-14 at 4.57.11 PM.png" width="500"/>       
+    
+    ![Screen Shot 2022-11-14 at 4.58.19 PM.png](images/Screen_Shot_2022-11-14_at_4.58.19_PM.png)
+
+    
+8. To save a movie, one can either save each frame to a PNG file and then stitch them together using FFMPEG (script provided in `result/PNG/MovieGen.sh`) or generate an .avi file from ParaViews internal functionality. We will use the latter for now.
+
+    - Click `File->Save Animation...`
+
+        <img src="images/Screen_Shot_2022-11-14_at_5.06.00_PM.png" alt="Screen Shot 2022-11-14 at 5.06.00 PM.png" width="400"/>       
+        
+    - Navigate to `MixMotorSliding` on your local if Save Animation window does not already bring your there and type in a name for your video file. Hit OK.
+        
+        ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screen_Shot_2022-11-14_at_5.08.59_PM.png)
+        
+    - Options are available to control size, frame rate, resolution, etc. of file. Hit OK when done.
+        
+        ![Screen Shot 2022-11-14 at 5.11.41 PM.png](images/Screen_Shot_2022-11-14_at_5.11.41_PM.png)
+
+    You should now see a .avi file in your simulation directory.         
+
+
+## Creating a your own ParaView state file (coming soon)
