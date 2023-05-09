@@ -10,7 +10,7 @@ Collection of resources for the Biophysical Modeling Summer School at the Flatir
 | 10:10AM | Break |
 | 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: Geraud Krawezik |
 | ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: Adam and Reza |
-| **Day 2  (Tuesday 6/6)** | **aLENS (part 1)**|
+| **Day 2  (Tuesday 6/6)** |: **aLENS (part 1)** :|
 | 2:00PM | Introduction to aLENS (what can it do) <br /> Speaker: Adam |
 | 2:30PM | Computational methods and code structure of aLENS  <br /> Speaker: Bryce |
 | 3:00PM | Break |
