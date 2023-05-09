@@ -133,6 +133,8 @@ The executable `aLENS.X` reads 2 input files (4 if specifying starting object co
 
 # Paraview and visualizing
 
+
+## Data file overview
 _aLENS_ produces 3 types of data files when run:
 - `<Object>Ascii_<Snapshot#>.dat`: Contains positional, geometric, and state information of all \<Object\>s  at \<Snapshot#\>. These are in the same format as the initial data files like `TubuleInitial.dat` or `ProteinInitial.dat`. (See [initial file configurations](initial_files).)
 <!-- (see [initial file configurations](./quickstart.md#initial-configuration-file-lines-optional)). -->
@@ -150,3 +152,31 @@ The data files are saved in different folders, but for postprocessing and visual
     $ ls ./*.pvd
     ./ConBlockpvtp.pvd  ./Proteinpvtp.pvd  ./Sylinderpvtp.pvd
     ``` -->
+
+
+## First visualization (using pre-made visualization file)
+Visualizations are created and interacted with using paraview. Be sure to have this software installed [https://www.paraview.org/download/](https://www.paraview.org/download/) (This tutorial was made using ParaView-5.9.1). Tutorials for using paraview for general data visualization can be found on their [website](https://docs.paraview.org/en/latest/).
+1. After running your [first simulation](quickstart), your `results` directory will have multiple result subdirectories inside of it.
+    
+    ```bash
+    $ cd ~/Run/MixMotorSliding/result
+    $ ls 
+    Clean.sh  PNG  Result2PVD.py  compress.sh  result0-399  result400-799  result800-1199  simBox.vtk  uncompress.sh
+
+
+2. To visualize the data, we must first run the `Result2PVD.py` script.
+    
+    ```bash
+    $ python3 ./Result2PVD.py
+    $ ls ./*.pvd
+    ./ConBlockpvtp.pvd  ./Proteinpvtp.pvd  ./Sylinderpvtp.pvd
+    ```
+    
+    This creates ParaView data (.pvd) files that point to the `.pvtp` files in the various result subfolders, allowing `Paraview` to load all the files belonging to a sequence in the correct order. It is safe to execute this script while `aLENS.X` is still running and writing data so analysis can occur before a simulation finishes.
+
+
+3. Open up the paraview GUI.
+    
+    ![Screen Shot 2022-11-14 at 12.46.21 PM (2).png](images/Screen_Shot_2022-11-14_at_12.46.21_PM_(2).png)
+
+
