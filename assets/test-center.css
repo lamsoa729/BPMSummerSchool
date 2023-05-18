@@ -51,7 +51,7 @@
  :root {
    --background-color: #fff;
    --main-font: Source Sans Pro, Helvetica, sans-serif;
-   --main-font-size: 42px;
+   --main-font-size: 36px;
    --main-color: #222;
    --block-margin: 20px;
    --heading-margin: 0 0 20px 0;
@@ -78,7 +78,7 @@
 
  .reveal {
    font-family: "Source Sans Pro", Helvetica, sans-serif;
-   font-size: 42px;
+   font-size: 36px;
    font-weight: normal;
    color: #222; }
 

@@ -15,10 +15,10 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 | 9:00AM | Variations and current projects (Flexible filaments and transient networks) <br /> Speaker: Adam | 
 | 9:30AM | Variations and current projects (Semi-flexible and growing filaments) <br /> Speaker: Dimitrios |
 | 10:00AM | Break |
-| 10:10AM | Variations and current projects (Bacterial growth) <br /> Speaker: Adam/Bryce|
+| 10:10AM | Variations and current projects (Bacterial growth) <br /> Speaker: Taeyoon/Bryce|
 | 10:40AM | Future modeling projects (Hydrodynamic simulations) <br /> Speaker: Scott/David Saintillan? |
 | ~11:10AM | Break|
-| ~11:20AM | Analysis package for aLENS and free play <br /> Instructor: Adam |
+| ~11:20AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: Adam |
 
 
 
