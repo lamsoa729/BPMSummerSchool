@@ -1,16 +1,22 @@
 # BPM Summer School
-Collection of resources for the Biophysical Modeling Summer School at the Flatiron Institute
+Collection of resources for the Biophysical Modeling Software Summer Workshop
+
+## Goal
+**Quickly acquaint new personel with compuational tools developed at Flatiron to model biophysical phenomena.**
+    1. Understand the strengths and limitations of methods when applied to scientific problems.
+    2. Learn how to debug, troubleshoot, and analyze data from simulations.
+    3. Be comfortable submitting large jobs to the Flatiron cluster.
 
 ## Schedule
 
 | Day 1  (Monday 6/5)   | General Introduction |
-| --- | --- |
+|:---|:---|
 | 9:00AM | Welcome and Introduction of BPM and CCB <br /> Speaker: Mike Shelley|
 | 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: Students |
 | 10:10AM | Break |
 | 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: Geraud Krawezik |
 | ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: Adam and Reza |
-| **Day 2  (Tuesday 6/6)** |: **aLENS (part 1)** :|
+| **Day 2  (Tuesday 6/6)** | **aLENS (part 1)** |
 | 2:00PM | Introduction to aLENS (what can it do) <br /> Speaker: Adam |
 | 2:30PM | Computational methods and code structure of aLENS  <br /> Speaker: Bryce |
 | 3:00PM | Break |
@@ -37,4 +43,16 @@ Collection of resources for the Biophysical Modeling Summer School at the Flatir
 
 
 ## Pre-workshop downloads
+- Docker desktop
+  - Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
+  - Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+  - (Optional) Docker engine
+    - [Linux](https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/)
+    - [Mac](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+- paraview [https://www.paraview.org/download/](https://www.paraview.org/download/)
+- HDFview
+  - Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
+  - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
 
+
+##
