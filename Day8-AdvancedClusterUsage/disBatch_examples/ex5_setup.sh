@@ -16,7 +16,8 @@ printf '#DISBATCH REPEAT '${reps}' start 1 x=${DISBATCH_REPEAT_INDEX} ; ../squar
 
 echo "../disBatch/disBatch -s localhost:4 Tasks" > disBatch_cmd
 printf "\nRunning:\n\t$(cat disBatch_cmd)\n"
-( { . disBatch_cmd & db=$! ; sleep 11 ; kill -SIGTERM ${db} ; wait ${db} 2> /dev/null ; } ; sleep 3 ; kill -SIGTERM $$ ) &
+parent_pid=$$
+( set -m ; bash disBatch_cmd & db=$! ; pgid=$(ps -o pgid= -p ${db}) ; sleep 11 ; kill -SIGKILL -${pgid} ; wait ${db} 2> /dev/null ; sleep 3 ; kill -SIGTERM ${parent_pid} ) &
 
 while [ ! -e *_status.txt ]
 do
