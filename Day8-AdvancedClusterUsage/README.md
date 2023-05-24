@@ -3,7 +3,7 @@
 - 9:00am-12:00pm
 - Flatiron 7th floor classroom
 
-## Prerequisites for Mac OS X
+## Prerequisites for Mac OS X (for disBatch session)
 - git
 - `ping -c 1 $(hostname)` should work. If it reports "Unknown host", try:
 ```bash
@@ -17,6 +17,14 @@ exit
 ```bash
 touch TestingCase testingcase ; ls | grep -i testingcase
 ```
-should list two files. If not, follow this [guidance](https://coderwall.com/p/mgi8ja/case-sensitive-git-in-mac-os-x-like-a-pro).
+should list two files. If not, try:
+```bash
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100m -volname BPMDay8 ~/BPMDay8image
+hdiutil attach ~/BPMDay8image.sparseimage
+cd /Volumes/BPMDay8
+# Run first example
+~/path/to/BPMSS_git_clone/Day8-AdvancedClusterUsage/disBatch_examples/ex1_setup.sh
+# ... run more examples ...
+```
 
 - [slides](https://lamsoa729.github.io/BPMSummerSchool/Day8-AdvancedClusterUsage/slides.html) ([source](main.md))
