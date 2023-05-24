@@ -3,4 +3,4 @@
 - 2:00-5:00pm
 - Flatiron 7th floor classroom
 
-- [slides](https://lamsoa729.github.io/BPMSummerSchool/Day7:OtherPDESolvers/slides.html) ([source](main.md))
+- [slides](https://lamsoa729.github.io/BPMSummerSchool/Day7-OtherPDESolvers/slides.html) ([source](main.md))
