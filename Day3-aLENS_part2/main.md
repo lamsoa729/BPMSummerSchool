@@ -57,6 +57,8 @@ Data is put into `result/result#-#/` directories to prevent surpassing file limi
 * VTK header files: ConBlock_#.pvtp, Sylinder_#.pvtp, Protein_#.pvtp
   * Human readable files of VTK format for XML files
 
+
+
 ## Ascii data files
 
 ### SylinderAscii_#.dat
@@ -87,23 +89,23 @@ Other functions:
 * Examples of analysis workflows
 
 
-# Installing `aLENS_analysis` from git
+## Installing `aLENS_analysis` from git
 
 ```bash
 # Copy repository
-git clone https://github.com/flatironinstitute/aLENS_analysis.git
-cd aLENS_analysis
+$ git clone https://github.com/flatironinstitute/aLENS_analysis.git
+$ cd aLENS_analysis
 
 # Set up conda environment
-conda create -n alens_analysis --file environment.yml
-conda activate alens_analysis
+$ conda create -n alens_analysis --file environment.yml
+$ conda activate alens_analysis
 # or venv environment
-python -m venv alens_analysis
-source analysis/bin/activate
-pip install -r requirements.txt
+$ python -m venv alens_analysis
+$ source analysis/bin/activate
+$ pip install -r requirements.txt
 
 # Install analysis package
-pip install -e .
+$ pip install -e .
 
 ```
 <!-- TODO Make sure that this is easy to install and set up -->
@@ -126,13 +128,13 @@ Useful tools
 * `h5dump`: print entire contents of HDF5 file
 
 ```bash
-cd analysis
-h5ls Run.h5
-h5ls Run.h5/raw_data
-h5dump Run.h5
-h5dump -A Run.h5
-h5dump -d /raw_data/proteins Run.h5
-```
+$ cd analysis
+$ h5ls Run.h5
+$ h5ls Run.h5/raw_data
+$ h5dump Run.h5
+$ h5dump -A Run.h5
+$  h5dump -d /raw_data/proteins Run.h5
+ ```
 
 
 ## Viewing data with `HDFView`

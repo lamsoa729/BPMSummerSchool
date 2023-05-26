@@ -24,7 +24,7 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 
 
 
-# Computational methods and code structure of aLENS
+# Computational methods of aLENS
 
 
 
@@ -81,7 +81,9 @@ You now have access to an environment that can run aLENS but will create data fi
       ```
     * For docker desktop, click the running `alens` container while in the containers section
       ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.58.11_PM.png)
-      then click the `terminal` tab in the upper middle of the window 
+      
+      
+    * then click the `terminal` tab in the upper middle of the window 
       ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.59.13_PM.png)
     
     You may treat this CLI just like any terminal that is connected to a remote server. 
@@ -162,6 +164,7 @@ Visualizations are created and interacted with using paraview. Be sure to have t
     $ cd ~/Run/MixMotorSliding/result
     $ ls 
     Clean.sh  PNG  Result2PVD.py  compress.sh  result0-399  result400-799  result800-1199  simBox.vtk  uncompress.sh
+    ```
 
 
 2. To visualize the data, we must first run the `Result2PVD.py` script.
@@ -182,12 +185,13 @@ Visualizations are created and interacted with using paraview. Be sure to have t
 
 4. The quickest way to get interpretable visualizations is to load a pre-made ParaView state (.pvsm) file that has filters already applied to the data to be loaded. One has been provided in the MixMotorSliding example.
     - In the upper left hand corner, click `Files -> Load State`.
-    
-        <img src="images/load_state.png" alt="load state" width="500"/>       
-    
+    <img src="images/load_state.png" alt="load state" width="500"/>       
+
+
     - From the pop up window, navigate to the mounted Run directory on your local machine and click `MixMotorSliding.pvsm` and click OK.
-        
-        ![Screen Shot 2022-11-14 at 4.36.07 PM.png](images/Screen_Shot_2022-11-14_at_4.36.07_PM.png)
+
+        <img src="images/Screen_Shot_2022-11-14_at_4.36.07_PM.png" alt="load state folder" width="500"/>       
+    <!-- ![Screen Shot 2022-11-14 at 4.36.07 PM.png](images/Screen_Shot_2022-11-14_at_4.36.07_PM.png) -->
         
 
 5. In Load State Options choose ‘Search files under specified directory. Data Directory should populate with the correct run directory on your local machine. Select ‘Only Use Files In Data Directory’ and press OK.
