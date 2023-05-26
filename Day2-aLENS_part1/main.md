@@ -1,10 +1,9 @@
-# Biophysical Modeling Workshop
-
-## Day 2: aLENS introduction (part 1) 
+# Day 2: aLENS introduction (part 1) 
 
 https://github.com/flatironinstitute/aLENS
 
 https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
+
 
 
 ## Today's Agenda
