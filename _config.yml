@@ -1,4 +1,4 @@
-timezone:    America/New_York
+timezone: America/New_York
 baseurl:
 exclude:
   - reveal.js/test
