@@ -30,11 +30,24 @@ Specifically: Particle/spring motion and constraint resolution
 
 ## Particle mobility
 
-The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles in the system given the forces and torques that act upon them.
+The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them.
 
-As of present, aLENS only support "dry" mobility where each rod's motion is restricted by *local* viscous drag. 
+We abstractly write this as $V = \mathcal{M}(F)$
 
+# What mobility operators does aLENS support?
 
+aLENS itself only supports "dry" hydrodynamic mobility where each rod's motion is resisted by *local* viscous drag. 
+
+Local drag has some caviots:
+- Rods and springs are suspended in space unless acted upon by a force (we typically ignore gravity).
+- The perpendicular drag coefficient is larger than the parallel coefficient.
+  - Can lead to visually unintuitive motion. 
+
+# What mobility operators will aLENS 2.0 support?
+
+- Local drag
+- Many-body hydrodynamics (via slender body theory and force dipoles)
+- Dry inertial (no fluid)
 
 Brownian motion 
 
