@@ -23,7 +23,7 @@ hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100m -voln
 hdiutil attach ~/BPMDay8image.sparseimage
 cd /Volumes/BPMDay8
 # Run first example
-~/path/to/BPMSS_git_clone/Day8-AdvancedClusterUsage/disBatch_examples/ex1_setup.sh
+bash ~/path/to/BPMSS_git_clone/Day8-AdvancedClusterUsage/disBatch_examples/ex1_setup.sh
 # ... run more examples ...
 ```
 

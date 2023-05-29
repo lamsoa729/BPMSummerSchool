@@ -1,22 +1,20 @@
-# Biophysical Modeling Workshop
-
-## Day 2: aLENS introduction (part 1) 
-
-https://github.com/flatironinstitute/aLENS
-
-https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
-
+# Day 5: SkellySim (part 2)
 
 ## Today's Agenda
 
-| Day 2  (Monday 6/5) | General Introduction |
+| **Day 5  (Friday 6/9)** | **SkellySim (part 2)**|
 | --- | --- |
-| 9:00AM | Welcome and Introduction of BPM and CCB <br /> Speaker: Mike Shelley|
-| 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: Students |
-| 10:10AM | Break |
-| 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: Geraud Krawezik |
-| ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: Adam and Reza |
+| 9:00AM | Current projects (Oocyte flows) <br />  Speaker: **Reza** | 
+| 9:30AM | Current projects (Rotating centrosomes) <br /> Speaker: **David** |
+| 10:00AM | Break |
+| 10:10AM | Tutorial: Analysis of SkellySim <br /> Instructor: **Reza**|
+| ~11:10AM | Break|
+| ~11:20AM | Free play <br /> Speaker: **Coordinators**|
 
 
 
-# Introduction
+# Current projects (Oocyte flows)
+
+
+
+# Current projects (Rotating centrosomes)

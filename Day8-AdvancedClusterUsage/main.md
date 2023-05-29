@@ -1,14 +1,17 @@
 # Advanced Cluster Usage
 
-- Running Programs and Environment Management
-- SLURM Tutorial
-- Large Batch Runs with disBatch
-- Testing Code for Correctness and Efficiency
-
+| **Day 8  (Wednesday 6/14)** | **Advanced cluster usage**|
+| --- | --- |
+| 9:00AM | Getting programs running/environment management <br />  Speaker: **Robert/Chris**| 
+| 10:00AM | Break |
+| 10:10AM | Tutorial: Slurm <br /> Speaker: **Chris**|
+| 10:30AM | Tutorial: Large batch runs with DisBatch <br /> Instructor: **Nick**|
+| ~11:00AM | Break|
+| ~11:10AM | Testing code for correctness and efficiency <br /> Speaker: **Vickram**|
 
 
 # Running Programs and Environment Management
-
+[conda cheatsheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf)
 
 
 # SLURM Tutorial
