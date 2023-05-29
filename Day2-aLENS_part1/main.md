@@ -24,7 +24,20 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 
 
 
-# Computational methods of aLENS
+# A peak into the numerical methods behind aLENS
+
+Specifically: Particle/spring motion and constraint resolution
+
+## Particle mobility
+
+The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles in the system given the forces and torques that act upon them.
+
+As of present, aLENS only support "dry" mobility where each rod's motion is restricted by *local* viscous drag. 
+
+
+
+Brownian motion 
+
 
 
 
