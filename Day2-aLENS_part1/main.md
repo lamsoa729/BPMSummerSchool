@@ -26,32 +26,52 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 
 # A peak into the numerical methods behind aLENS
 
-Specifically: Particle/spring motion and constraint resolution
+- Domain decomposition/load balancing/neighbor detection
+- Particle (rod) mobility
+- Spring/collision resolution
+
+## Domain decomposition/load balancing/neighbor detection
+
+aLENS automates many of the essential particle-based simulation tasks for you. 
+
+It automatically performs 
+- Domain decomposition to ensure that the number of particles per process remains constant.
+- Load balancing to ensure rebalance the particle distribution as the system evolves. 
+- Neighbor detection to check for collisions between particles.
+
+## An important caveat to be aware of
+
+aLENS' Domain decomposition and load balancing ensures that the number of *particles* per process remains constant, not the number of springs. 
+  
+This can lead to load imbalance and increased communication costs/computation time. 
 
 ## Particle mobility
 
-The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them.
+The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them. We abstractly write this as $V = \mathcal{M}(F)$. 
 
-We abstractly write this as $V = \mathcal{M}(F)$
+aLENS was programmed to accept any linear mobility operator. 
 
-# What mobility operators does aLENS support?
+## What mobility operators does aLENS support?
 
-aLENS itself only supports "dry" hydrodynamic mobility where each rod's motion is resisted by *local* viscous drag. 
+aLENS currently only supports "dry" hydrodynamic mobility where each rod's motion is resisted by *local* viscous drag.
 
 Local drag has some caviots:
 - Rods and springs are suspended in space unless acted upon by a force (we typically ignore gravity).
 - The perpendicular drag coefficient is larger than the parallel coefficient.
   - Can lead to visually unintuitive motion. 
 
-# What mobility operators will aLENS 2.0 support?
+## What mobility operators will aLENS 2.0 support?
 
 - Local drag
-- Many-body hydrodynamics (via slender body theory and force dipoles)
+- Many-body hydrodynamics (via slender body theory, force dipoles, and boundary integrals)
 - Dry inertial (no fluid)
 
-Brownian motion 
+## Spring/collision resolition
 
+Motion according to the *unconstrained* mobility problem can cause particles to overlap and springs to violate Hooke's law. 
 
+aLENS addresses this issue by writing the spring force and collision free conditions as learized constraint.
+- For springs the constraints is satisfied if. 
 
 
 # Tutorial: Running aLENS for the first time 
