@@ -43,7 +43,7 @@ done > Tasks
 printf "\nTasks:\n"
 cat Tasks
 
-echo "../disBatch/disBatch --status-header -s localhost:2 Tasks" > disBatch_cmd
+echo "../disBatch/disBatch --status-header --use-address=localhost:0 -s localhost:2 Tasks" > disBatch_cmd
 printf "\nRunning:\n\t$(cat disBatch_cmd)\n"
 ( . disBatch_cmd ; sleep 3 ; kill -SIGTERM $$ ) &
 

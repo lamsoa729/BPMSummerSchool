@@ -14,7 +14,7 @@ cd ${DIR}
 reps=13
 printf '#DISBATCH REPEAT '${reps}' start 1 x=${DISBATCH_REPEAT_INDEX} ; ../square ${x} > ${x}.out 2> ${x}.err\n' > Tasks
 
-echo "../disBatch/disBatch -s localhost:4 Tasks" > disBatch_cmd
+echo "../disBatch/disBatch --use-address=localhost:0 -s localhost:4 Tasks" > disBatch_cmd
 printf "\nRunning:\n\t$(cat disBatch_cmd)\n"
 parent_pid=$$
 ( set -m ; bash disBatch_cmd & db=$! ; pgid=$(ps -o pgid= -p ${db}) ; sleep 11 ; kill -SIGKILL -${pgid} ; wait ${db} 2> /dev/null ; sleep 3 ; kill -SIGTERM ${parent_pid} ) &
@@ -37,7 +37,7 @@ RESUME_DIR="resume"
 rm -rf ${RESUME_DIR}
 mkdir ${RESUME_DIR}
 
-echo "../disBatch/disBatch -s localhost:6 Tasks -p ${RESUME_DIR} -r ${status}" > disBatch_resume_cmd
+echo "../disBatch/disBatch --use-address=localhost:0 -s localhost:6 Tasks -p ${RESUME_DIR} -r ${status}" > disBatch_resume_cmd
 printf "\nNow running resume:\n\t$(cat disBatch_resume_cmd)\n"
 ( . disBatch_resume_cmd ; sleep 3 ; kill -SIGTERM $$ ) &
 while [ ! -e ${RESUME_DIR}/*_status.txt ]
