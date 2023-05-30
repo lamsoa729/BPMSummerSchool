@@ -23,7 +23,6 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 # aLENS: What is it good for?
 
 
-
 # A peak into the numerical methods behind aLENS
 
 - Domain decomposition/load balancing/neighbor detection
@@ -36,14 +35,24 @@ aLENS automates many of the essential particle-based simulation tasks for you.
 
 It automatically performs 
 - Domain decomposition to ensure that the number of particles per process remains constant.
-- Load balancing to ensure rebalance the particle distribution as the system evolves. 
+- Load balancing to rebalance the particle distribution as the system evolves. 
 - Neighbor detection to check for collisions between particles.
+
+Example domain decomposition:
+
+![domain_decom_1.png](images/domain_decom_1.png)
+
 
 ## An important caveat to be aware of
 
 aLENS' Domain decomposition and load balancing ensures that the number of *particles* per process remains constant, not the number of springs. 
   
 This can lead to load imbalance and increased communication costs/computation time. 
+
+If we have a large number of springs in our upper left-hand corner, then the red process is now overloaded with work, containing 18 objects, whereas the other processes have 4-5 objects. 
+![domain_decom_2.png](images/domain_decom_2.png)
+
+As a result, aLENS performs best when the distribution of springs is similar to the distribution of particles. If you have strong differences between the two, that's fine; it'll just cause some inefficiency. 
 
 ## Particle mobility
 
@@ -55,7 +64,7 @@ aLENS was programmed to accept any linear mobility operator.
 
 aLENS currently only supports "dry" hydrodynamic mobility where each rod's motion is resisted by *local* viscous drag.
 
-Local drag has some caviots:
+Local drag has some caveats:
 - Rods and springs are suspended in space unless acted upon by a force (we typically ignore gravity).
 - The perpendicular drag coefficient is larger than the parallel coefficient.
   - Can lead to visually unintuitive motion. 
@@ -66,12 +75,13 @@ Local drag has some caviots:
 - Many-body hydrodynamics (via slender body theory, force dipoles, and boundary integrals)
 - Dry inertial (no fluid)
 
-## Spring/collision resolition
+## Spring/collision resolution
 
-Motion according to the *unconstrained* mobility problem can cause particles to overlap and springs to violate Hooke's law. 
+Motion, according to the *unconstrained* mobility problem, can cause particles to overlap and springs to violate Hooke's law. 
 
-aLENS addresses this issue by writing the spring force and collision free conditions as learized constraint.
-- For springs the constraints is satisfied if. 
+aLENS addresses this issue by writing the spring force and collision-free conditions as linearized constraints.
+- For springs, the constraints are satisfied if. 
+
 
 
 # Tutorial: Running aLENS for the first time 
