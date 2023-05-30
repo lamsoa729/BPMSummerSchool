@@ -142,27 +142,27 @@ You now have access to an environment that can run aLENS but will create data fi
       ```
     * For docker desktop, click the running `alens` container while in the containers section
       ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.58.11_PM.png)
-      
-      
+
+
     * then click the `terminal` tab in the upper middle of the window 
       ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.59.13_PM.png)
     
-    You may treat this CLI just like any terminal that is connected to a remote server. 
+    You may treat this CLI just like any terminal connected to a remote server. 
 
 
-1. From this CLI, navigate to the `Run` directory
+2. From this CLI, navigate to the `Run` directory
     ```bash
     cd /root/Run 
     ```
 
-2.  While still in the CLI, copy the example configuration to the data folder
+3.  While still in the CLI, copy the example configuration to the data folder
 
     ```bash
     cp -r ~/aLENS/Examples/MixMotorSliding .
     cd MixMotorSliding
     ```
 
-3.  Copy the contents of the `Run` template directory from aLENS to the data folder as well
+4.  Copy the contents of the `Run` template directory from aLENS to the data folder as well
 
     ```bash
     cp -r ~/aLENS/Run/* .
@@ -171,7 +171,7 @@ You now have access to an environment that can run aLENS but will create data fi
     You should now see an `aLENS.X` executable in this directory along with `result` and `script` directories containing useful scripts for processing, storing, and cleaning up generated files.
 
 
-7.  Run _aLENS_
+5.  Run _aLENS_
 
     ```bash
     ./aLENS.X
@@ -179,8 +179,8 @@ You now have access to an environment that can run aLENS but will create data fi
     OMP_NUM_THREADS=<number_of_cores> ./aLENS.
     ```
 
-8.  Stop the run by pressing `[ctrl+c]`
-9.  Execute run again as we did in step 4. Notice that the aLENS simulation continues from the last snapshot. This is a very useful restart feature for longer runs.
+6.  Stop the run by pressing `[ctrl+c]`
+7.  Execute run again as we did in step 4. Notice that the aLENS simulation continues from the last snapshot. This is a very useful restart feature for longer runs.
 
 
 ## Parameter and initial configuration files
@@ -198,13 +198,13 @@ The executable `aLENS.X` reads 2 input files (4 if specifying starting object co
 
 
 ## Data file overview
-_aLENS_ produces 3 types of data files when run:
+<!-- _aLENS_ produces 3 types of data files when run:
 - `<Object>Ascii_<Snapshot#>.dat`: Contains positional, geometric, and state information of all \<Object\>s  at \<Snapshot#\>. These are in the same format as the initial data files like `TubuleInitial.dat` or `ProteinInitial.dat`. (See [initial file configurations](initial_files).)
 <!-- (see [initial file configurations](./quickstart.md#initial-configuration-file-lines-optional)). -->
 
-- `<Object>_r<Rank#>_<Snapshot#>.vtp`: XML vtk format in base64 binary encoding for all \<Object\> information. `aLENS.X` is written such that each MPI rank writes its own set of data to a unique `vtp` file marked by \<Rank#\>. These are not human readable but can be conveniently loaded into `Paraview` for visualization or read by VTK (either python or cpp) for data processing.
+<!-- - `<Object>_r<Rank#>_<Snapshot#>.vtp`: XML vtk format in base64 binary encoding for all \<Object\> information. `aLENS.X` is written such that each MPI rank writes its own set of data to a unique `vtp` file marked by \<Rank#\>. These are not human readable but can be conveniently loaded into `Paraview` for visualization or read by VTK (either python or cpp) for data processing. -->
 
-- `<Object>_<Snapshot#>.pvtp`: (pvtp = parallel vtp) An index to a set of `vtp` files (serial vtp), which holds the actual data. Therefore the number of `vtp` files in each `pvtp` file index is equal to the number of MPI ranks. The restriction is that the index `pvtp` file must appear in the same location as those `vtp` data files. For a comprehensive explanation of these `pvtp` files, read the official guide of vtk file format:  `https://kitware.github.io/vtk-examples/site/VTKFileFormats/#parallel-file-formats`
+<!-- - `<Object>_<Snapshot#>.pvtp`: (pvtp = parallel vtp) An index to a set of `vtp` files (serial vtp), which holds the actual data. Therefore the number of `vtp` files in each `pvtp` file index is equal to the number of MPI ranks. The restriction is that the index `pvtp` file must appear in the same location as those `vtp` data files. For a comprehensive explanation of these `pvtp` files, read the official guide of vtk file format:  `https://kitware.github.io/vtk-examples/site/VTKFileFormats/#parallel-file-formats` --> 
 
 The data files are saved in different folders, but for postprocessing and visualization, files of a given sequence must appear in the same folder otherwise postprocessing or visualization programs may fail to load the entire sequence. The python script `Result2PVD.py` solves this restriction. More on this later in the tutorial. 
 <!-- To run this script:
@@ -251,40 +251,40 @@ Visualizations are created and interacted with using paraview. Be sure to have t
 
     - From the pop up window, navigate to the mounted Run directory on your local machine and click `MixMotorSliding.pvsm` and click OK.
 
-        <img src="images/Screen_Shot_2022-11-14_at_4.36.07_PM.png" alt="load state folder" width="500"/>       
-    <!-- ![Screen Shot 2022-11-14 at 4.36.07 PM.png](images/Screen_Shot_2022-11-14_at_4.36.07_PM.png) -->
-        
+        <img src="images/Screen_Shot_2022-11-14_at_4.36.07_PM.png" alt="load state folder" width="800"/>       
+
 
 5. In Load State Options choose ‘Search files under specified directory. Data Directory should populate with the correct run directory on your local machine. Select ‘Only Use Files In Data Directory’ and press OK.
-    
-    <img src="images/Screen_Shot_2022-11-14_at_4.40.43_PM.png" alt="Screen Shot 2022-11-14 at 4.40.43 PM.png" width="500"/>       
+<img src="images/Screen_Shot_2022-11-14_at_4.40.43_PM.png" alt="Screen Shot 2022-11-14 at 4.40.43 PM.png" width="500"/>       
 
-    
+
 6. Run visualization using run button at the top of the screen.
-    
-    ![Screen Shot 2022-11-14 at 4.53.41 PM.png](images/Screen_Shot_2022-11-14_at_4.53.41_PM.png)
+<img src="images/Screen_Shot_2022-11-14_at_4.53.41_PM.png" alt="Screen Shot 2022-11-14 at 4.40.43 PM.png" width="500"/>       
+    <!-- ![Screen Shot 2022-11-14 at 4.53.41 PM.png](images/Screen_Shot_2022-11-14_at_4.53.41_PM.png) -->
 
-    
+
 7. Objects in the simulation are shown on the left-hand bar and can be turned on and off by clicking on the eye icon next the the names. (The more objects shown, the slower the visualization will run)
     
-    <img src="images/Screen_Shot_2022-11-14_at_4.57.11_PM.png" alt="Screen Shot 2022-11-14 at 4.57.11 PM.png" width="500"/>       
-    
-    ![Screen Shot 2022-11-14 at 4.58.19 PM.png](images/Screen_Shot_2022-11-14_at_4.58.19_PM.png)
+    <img src="images/Screen_Shot_2022-11-14_at_4.57.11_PM.png" alt="Screen Shot 2022-11-14 at 4.57.11 PM.png" width="400"/>       
+    <img src="images/Screen_Shot_2022-11-14_at_4.58.19_PM.png" alt="Screen Shot 2022-11-14 at 4.57.11 PM.png" width="700"/>       
+    <!-- ![Screen Shot 2022-11-14 at 4.58.19 PM.png](images/Screen_Shot_2022-11-14_at_4.58.19_PM.png) -->
 
-    
+
 8. To save a movie, one can either save each frame to a PNG file and then stitch them together using FFMPEG (script provided in `result/PNG/MovieGen.sh`) or generate an .avi file from ParaViews internal functionality. We will use the latter for now.
 
     - Click `File->Save Animation...`
 
         <img src="images/Screen_Shot_2022-11-14_at_5.06.00_PM.png" alt="Screen Shot 2022-11-14 at 5.06.00 PM.png" width="400"/>       
-        
+
+
     - Navigate to `MixMotorSliding` on your local if Save Animation window does not already bring your there and type in a name for your video file. Hit OK.
         
         ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screen_Shot_2022-11-14_at_5.08.59_PM.png)
-        
+
+
     - Options are available to control size, frame rate, resolution, etc. of file. Hit OK when done.
         
-        ![Screen Shot 2022-11-14 at 5.11.41 PM.png](images/Screen_Shot_2022-11-14_at_5.11.41_PM.png)
+        <img src="images/Screen_Shot_2022-11-14_at_5.11.41_PM.png" alt="Movie making" width="500"/>
 
     You should now see a .avi file in your simulation directory.         
 
