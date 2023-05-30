@@ -79,8 +79,11 @@ Local drag has some caveats:
 
 Motion, according to the *unconstrained* mobility problem, can cause particles to overlap and springs to violate Hooke's law. 
 
-aLENS addresses this issue by writing the spring force and collision-free conditions as linearized constraints.
-- For springs, the constraints are satisfied if. 
+aLENS addresses this issue by writing the spring force and collision-free conditions as linearized constraints. The unknowns, which we must solve for at each timestep, are thus the collision and spring force magnatudes $\lambda$.
+- For springs, the constraint seeks to minimize the difference between $\lambda$ and $k\delta x$.
+- For collisions, the constraint seeks to minimize the overlap between particles while ensuring that non-overlapping particles have zero collision force.
+
+Thogether, these constraints form a constrained convex optimization problem, which can be solved via projected tradient descent. 
 
 
 
