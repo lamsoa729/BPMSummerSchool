@@ -23,10 +23,71 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 # aLENS: What is it good for?
 
 
+# A peak into the numerical methods behind aLENS
 
-# Computational methods of aLENS
+- Domain decomposition/load balancing/neighbor detection
+- Particle (rod) mobility
+- Spring/collision resolution
+
+## Domain decomposition/load balancing/neighbor detection
+
+aLENS automates many of the essential particle-based simulation tasks for you. 
+
+It automatically performs 
+- Domain decomposition to ensure that the number of particles per process remains constant.
+- Load balancing to rebalance the particle distribution as the system evolves. 
+- Neighbor detection to check for collisions between particles.
+
+Example domain decomposition:
+
+![domain_decom_1.png](images/domain_decom_1.png)
 
 
+## An important caveat to be aware of
+
+aLENS' Domain decomposition and load balancing ensures that the number of *particles* per process remains constant, not the number of springs. 
+  
+This can lead to load imbalance and increased communication costs/computation time. 
+
+If we have a large number of springs in our upper left-hand corner, then the red process is now overloaded with work, containing 18 objects, whereas the other processes have 4-5 objects. 
+![domain_decom_2.png](images/domain_decom_2.png)
+
+As a result, aLENS performs best when the distribution of springs is similar to the distribution of particles. If you have strong differences between the two, that's fine; it'll just cause some inefficiency. 
+
+## Particle mobility
+
+The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them. We abstractly write this as $V = \mathcal{M}(F)$. 
+
+aLENS was programmed to accept any linear mobility operator. 
+
+## What mobility operators does aLENS support?
+
+aLENS currently only supports "dry" hydrodynamic mobility where each rod's motion is resisted by *local* viscous drag.
+
+Local drag has some caveats:
+- Rods and springs are suspended in space unless acted upon by a force (we typically ignore gravity).
+- The perpendicular drag coefficient is larger than the parallel coefficient.
+  - Can lead to visually unintuitive motion. 
+
+## What mobility operators will aLENS 2.0 support?
+
+- Local drag
+- Many-body hydrodynamics (via slender body theory, force dipoles, and boundary integrals)
+- Dry inertial (no fluid)
+
+## Spring/collision resolution
+
+Motion, according to the *unconstrained* mobility problem, can cause particles to overlap and springs to violate Hooke's law. 
+
+aLENS addresses this issue by writing the spring force and collision-free conditions as linearized constraints. The unknowns, which we must solve for at each timestep, are thus the collision and spring force magnatudes $\lambda$.
+- For springs, the constraint seeks to minimize the difference between $\lambda$ and $k\delta x$.
+- For collisions, the constraint seeks to minimize the overlap between particles while ensuring that non-overlapping particles have zero collision force.
+
+Thogether, these constraints form a constrained convex optimization problem, which can be solved via projected gradient descent (using either APGD or BBPGD).
+
+Example projected gradient descent solve:
+
+![APGD_path.png](images/APGD_path.png)
 
 # Tutorial: Running aLENS for the first time 
 
@@ -228,4 +289,17 @@ Visualizations are created and interacted with using paraview. Be sure to have t
     You should now see a .avi file in your simulation directory.         
 
 
-## Creating a your own ParaView state file (coming soon)
+## Creating a your own ParaView state file (a live tutorial)
+
+Steps that we'll cover:
+1. Open the rod data (either Sylinderpvtp.pvd or Sylinder_*.pvtp)
+2. Create some filters
+  - Add a Tube filter to better visualize the rods.
+  - Add a Sphere Glyph to add caps to the rods.
+  - Display field data and choose your coloring scheme.
+  - Realize that your Glyphs don't have access to the desired field and use CellDataToPointData to give them access.
+  - Use a Clip filter to cut the rods and caps in half.
+3. Change the View to set your resolution.
+3. Save the state.
+4. Use the state to load in data other then what you stated with. 
+5. Make it pretty by enabling ray tracing or ambient occlusion.
