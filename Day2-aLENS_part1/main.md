@@ -274,4 +274,17 @@ Visualizations are created and interacted with using paraview. Be sure to have t
     You should now see a .avi file in your simulation directory.         
 
 
-## Creating a your own ParaView state file (coming soon)
+## Creating a your own ParaView state file (a live tutorial)
+
+Steps that we'll cover:
+1. Open the rod data (either Sylinderpvtp.pvd or Sylinder_*.pvtp)
+2. Create some filters
+  - Add a Tube filter to better visualize the rods.
+  - Add a Sphere Glyph to add caps to the rods.
+  - Display field data and choose your coloring scheme.
+  - Realize that your Glyphs don't have access to the desired field and use CellDataToPointData to give them access.
+  - Use a Clip filter to cut the rods and caps in half.
+3. Change the View to set your resolution.
+3. Save the state.
+4. Use the state to load in data other then what you stated with. 
+5. Make it pretty by enabling ray tracing or ambient occlusion.
