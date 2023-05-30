@@ -83,9 +83,11 @@ aLENS addresses this issue by writing the spring force and collision-free condit
 - For springs, the constraint seeks to minimize the difference between $\lambda$ and $k\delta x$.
 - For collisions, the constraint seeks to minimize the overlap between particles while ensuring that non-overlapping particles have zero collision force.
 
-Thogether, these constraints form a constrained convex optimization problem, which can be solved via projected tradient descent. 
+Thogether, these constraints form a constrained convex optimization problem, which can be solved via projected gradient descent (using either APGD or BBPGD).
 
+Example projected gradient descent solve:
 
+![APGD_path.png](images/APGD_path.png)
 
 # Tutorial: Running aLENS for the first time 
 
