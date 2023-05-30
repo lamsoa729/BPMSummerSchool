@@ -79,7 +79,7 @@ First two lines: Number of proteins, time step. (These do not get read for initi
 
 
 ## `aLENS_analysis` package for dealing with data
-Often easier to deal with one file than $10^3$ individual time step files.
+Often easier to deal with one file than 10$^3$ individual time step files.
 
 `aLENS_analysis` provides collection of ascii and vtk data into HDF5 files for easier analysis.
 
@@ -108,13 +108,13 @@ $ pip install -r requirements.txt
 $ pip install -e .
 
 ```
-<!-- TODO Make sure that this is easy to install and set up -->
+<!-- Try to get conda environment working  -->
 
 
 ## Running data collection routine
 
 ```bash
-analens -A collect
+$ analens -A collect
 ```
 Should see new directory in simulation folder called `analysis` with `Run.h5` file.
 HDF5 is a hierarchical data format that allows for fast access to large datasets.
@@ -139,19 +139,29 @@ $  h5dump -d /raw_data/proteins Run.h5
 
 ## Viewing data with `HDFView`
 [HDFView](https://www.hdfgroup.org/downloads/hdfview/) is a graphical interface for viewing HDF5 files.
- 
-  <img src="images/hdfview_screenshot.png" alt="hdfview of proteins" width="500"/>   
+<img src="images/hdfview_screenshot.png" alt="hdfview of proteins" width="500"/>   
 
 
 ## Using `aLENS_analysis` in python
 
-Jupyter notebook example of using `aLENS_analysis` to analyze data.
+First set up ipython kernel for conda environment
+  ```bash
+  $ python -m ipykernel install --user --name  alens--display-name "Python (<name_of_env>)"
+  ```
+  and then run jupyter lab
+  ```bash 
+  $ jupyter-lab
+  ```
 
 
-## Calling functions from alens_analysis package
+<!-- Jupyter notebook example of using `aLENS_analysis` to analyze data. -->
+Todo: add example notebook image of using aLENS_analysis
+
+## Calling functions from `aLENS_analysis` package
+todo: Image of calling functions from alens_analysis package
 
 
-## Plotting data with `aLENS_analysis`
+<!-- ## Plotting data with `aLENS_analysis` -->
 
 
 ## Saving post-process data in hdf5 file
