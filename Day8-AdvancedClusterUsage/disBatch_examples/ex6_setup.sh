@@ -16,7 +16,7 @@ printf '#DISBATCH REPEAT '${reps}' start 1 x=${DISBATCH_REPEAT_INDEX} ; ../squar
 printf "\nTasks (note the increase):\n"
 cat Tasks
 
-echo "../disBatch/disBatch -s localhost:4 Tasks" > disBatch_cmd
+echo "../disBatch/disBatch --use-address=localhost:0 -s localhost:4 Tasks" > disBatch_cmd
 printf "\nRunning:\n\t$(cat disBatch_cmd)\n"
 . disBatch_cmd &
 

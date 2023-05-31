@@ -19,7 +19,7 @@ done > Tasks
 printf "\nTasks:\n"
 cat Tasks
 
-echo "../disBatch/disBatch -s localhost:16 Tasks" > disBatch_cmd
+echo "../disBatch/disBatch --use-address=localhost:0 -s localhost:16 Tasks" > disBatch_cmd
 printf "Running:\n\t$(cat disBatch_cmd)\n"
 ( . disBatch_cmd ; sleep 3 ; kill -SIGTERM $$ ) &
 
