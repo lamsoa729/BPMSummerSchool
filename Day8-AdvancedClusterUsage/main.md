@@ -69,11 +69,14 @@
 
 - For *real* tasks, use core counts more closely aligned to the number actually available
 - Tasks can be set up to use multiple cores each
-- Using SLURM:  
- `sbatch -n 100 -c 3 -p scc -t 1-0 disBatch Tasks`  
+- Using SLURM (at Flatiron):  
+```
+module load disBatch/beta
+sbatch -n 100 -c 3 -p scc -t 1-0 disBatch Tasks
+```  
    Tell SLURM what you want, SLURM will then tell disBatch (note in this example `Tasks` is the only argument for `disBatch`)  
    (Don't need `--use-address=localhost:0`)  
-- Intranode MPI: unset `SLURM_JOBID`
+- Intranode MPI: add `unset SLURM_JOBID` to each task command sequence (or invocation wrapper)
 - Get in the habit of checking `*_status.txt`
 - For the adventurous: there is an API for embedded use (see `disBatch/exampleTaskFiles/dberTest.py`)
 
