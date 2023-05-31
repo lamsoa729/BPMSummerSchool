@@ -19,15 +19,46 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 | ~4:10PM | Explanation of parameters and playing with simulations |
 
 
+## Pre-tutorial software installation
+
+- Docker desktop
+  - Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
+  - Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+  - (Optional) Docker engine
+    - Linux [https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/](https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/)
+    - Mac [https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+- paraview [https://www.paraview.org/download/](https://www.paraview.org/download/)
+- hdf5 view
+  - Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
+  - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
+
+
+## Setup container
+
+1. Open [docker desktop](https://www.docker.com/blog/getting-started-with-docker-desktop/)
+    <!-- TODO Make overview for dockerhub image -->
+
+1. Pull latest docker image from [dockerhub](https://hub.docker.com/r/lamsoa729/alens)
+
+   ```bash
+   $ docker pull lamsoa729/alens:latest
+   ```
+^#note: May need `sudo` depending on your docker installation.
+
+
 
 # aLENS: What is it good for?
+### Adam Lamson
 
 
-# A peak into the numerical methods behind aLENS
+
+# A peek into the numerical methods behind aLENS
+### Bryce Palmer
 
 - Domain decomposition/load balancing/neighbor detection
 - Particle (rod) mobility
 - Spring/collision resolution
+
 
 ## Domain decomposition/load balancing/neighbor detection
 
@@ -54,11 +85,13 @@ If we have a large number of springs in our upper left-hand corner, then the red
 
 As a result, aLENS performs best when the distribution of springs is similar to the distribution of particles. If you have strong differences between the two, that's fine; it'll just cause some inefficiency. 
 
+
 ## Particle mobility
 
-The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them. We abstractly write this as $V = \mathcal{M}(F)$. 
+The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them. We abstractly write this as $V = M(F)$. 
 
 aLENS was programmed to accept any linear mobility operator. 
+
 
 ## What mobility operators does aLENS support?
 
@@ -69,27 +102,33 @@ Local drag has some caveats:
 - The perpendicular drag coefficient is larger than the parallel coefficient.
   - Can lead to visually unintuitive motion. 
 
+
 ## What mobility operators will aLENS 2.0 support?
 
 - Local drag
 - Many-body hydrodynamics (via slender body theory, force dipoles, and boundary integrals)
 - Dry inertial (no fluid)
 
+
 ## Spring/collision resolution
 
 Motion, according to the *unconstrained* mobility problem, can cause particles to overlap and springs to violate Hooke's law. 
 
 aLENS addresses this issue by writing the spring force and collision-free conditions as linearized constraints. The unknowns, which we must solve for at each timestep, are thus the collision and spring force magnatudes $\lambda$.
-- For springs, the constraint seeks to minimize the difference between $\lambda$ and $k\delta x$.
+- For springs, the constraint seeks to minimize the difference between $\lambda$ and $k\Delta x$.
 - For collisions, the constraint seeks to minimize the overlap between particles while ensuring that non-overlapping particles have zero collision force.
 
 Thogether, these constraints form a constrained convex optimization problem, which can be solved via projected gradient descent (using either APGD or BBPGD).
+
 
 Example projected gradient descent solve:
 
 ![APGD_path.png](images/APGD_path.png)
 
+
+
 # Tutorial: Running aLENS for the first time 
+### Adam Lamson
 
 
 ## Pre-software installation
@@ -107,26 +146,27 @@ Example projected gradient descent solve:
 
 ## Creating a container
 
-<!-- 1. Open [docker desktop](https://www.docker.com/blog/getting-started-with-docker-desktop/) -->
+1. Open [docker desktop](https://www.docker.com/blog/getting-started-with-docker-desktop/)
+    <!-- TODO Make overview for dockerhub image -->
 
-<!-- TODO Make overview for dockerhub image -->
 1. Pull latest docker image from [dockerhub](https://hub.docker.com/r/lamsoa729/alens)
 
    ```bash
-   docker pull lamsoa729/alens:latest
+   $ docker pull lamsoa729/alens:latest
    ```
+   NOTE: May need `sudo` depending on your docker installation.
 
 1. Make a folder to access your simulation data stored generated in docker container
 
    ```bash
-   mkdir my_alens_data; cd my_alens_data
+   % mkdir my_alens_data; cd my_alens_data
    ```
 
 1. Create and run a docker container from the image pulled from dockerhub
    ```bash
-   docker run --volume=<path/to/my_alens_data>:/root/Run --name alens -dit lamsoa729/alens:latest
+   docker run --volume=.:/root/Run --name alens -dit lamsoa729/alens:latest
    ```
-   (see documentation for details of this command)
+   <!-- docker run --volume=<path/to/my_alens_data>:/root/Run --name alens -dit lamsoa729/alens:latest -->
 
 You now have access to an environment that can run aLENS but will create data files on your local computer.
 
@@ -144,8 +184,8 @@ You now have access to an environment that can run aLENS but will create data fi
       ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.58.11_PM.png)
 
 
-    * then click the `terminal` tab in the upper middle of the window 
-      ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.59.13_PM.png)
+      * then click the `terminal` tab in the upper middle of the window 
+        ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.59.13_PM.png)
     
     You may treat this CLI just like any terminal connected to a remote server. 
 
@@ -154,6 +194,7 @@ You now have access to an environment that can run aLENS but will create data fi
     ```bash
     cd /root/Run 
     ```
+    This is your directory you connected to your local computer in step 4 of the previous section.
 
 3.  While still in the CLI, copy the example configuration to the data folder
 

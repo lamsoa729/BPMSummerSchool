@@ -30,12 +30,26 @@
 # Intro to resources available from SCC to the Cluster
 
 ### Speaker: Geraud Krawezik
+TODO: upload presentation
 
 
 
-# Tutorial
+# Tutorial: Pre-workshop software installation and cluster setup 
 
 ### Instructors: Adam and Reza
+
+
+## Pre-software installation
+- Docker desktop
+  - Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
+  - Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+  - (Optional) Docker engine
+    - Linux [https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/](https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/)
+    - Mac [https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+- paraview [https://www.paraview.org/download/](https://www.paraview.org/download/)
+- hdf5 view
+  - Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
+  - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
 
 
 

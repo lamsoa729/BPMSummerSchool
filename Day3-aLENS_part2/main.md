@@ -14,7 +14,7 @@ https://github.com/flatironinstitute/aLENS_analysis/
 | 9:00AM | Variations and current projects (Flexible filaments and transient networks) <br /> Speaker: Adam | 
 | 9:30AM | Variations and current projects (Semi-flexible and growing filaments) <br /> Speaker: Dimitrios |
 | 10:00AM | Break |
-| 10:10AM | Variations and current projects (Bacterial growth) <br /> Speaker: Taeyoon/Bryce|
+| 10:10AM | Variations and current projects (Bacterial growth) <br /> Speaker: Taeyoon|
 | 10:40AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: Adam |
 | ~11:10AM | Break|
 | ~11:20AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: Adam |
@@ -39,12 +39,12 @@ TODO: upload presentation
 
 
 
-# How to analyze aLENS data
+# Tutorial: How to analyze aLENS data
+### Adam Lamson
 
 
 ## Generate data to analyze
 
-TODO: Pick example file, commands to have students run the simulation
 
 
 ## Data organization file formats
@@ -115,10 +115,10 @@ $ pip install -e .
 
 ```bash
 $ analens -A collect
+
 ```
-Should see new directory in simulation folder called `analysis` with `Run.h5` file.
+Should see new directory in simulation folder called `analysis` with `MixMotorSliding.h5` file.
 HDF5 is a hierarchical data format that allows for fast access to large datasets.
-<!-- TODO get picture of data -->
 
 
 ## Commandline interface for HDF5 data
@@ -133,7 +133,7 @@ $ h5ls Run.h5
 $ h5ls Run.h5/raw_data
 $ h5dump Run.h5
 $ h5dump -A Run.h5
-$  h5dump -d /raw_data/proteins Run.h5
+$ h5dump -d /raw_data/proteins Run.h5
  ```
 
 
@@ -154,7 +154,7 @@ First set up ipython kernel for conda environment
   ```
 
 
-<!-- Jupyter notebook example of using `aLENS_analysis` to analyze data. -->
+<!-- TODO: What should they see for aLENS -->
 Todo: add example notebook image of using aLENS_analysis
 
 ## Calling functions from `aLENS_analysis` package
