@@ -88,8 +88,16 @@ Robert Blackwell (author)
   * `PVFMM/STKMM` for hydrodynamic calculations
     * `CUDA` and `CPU` direct solvers for smaller systems
   * `msgpack` for serialization/inter-language communication
+  * `blender` for visualization
 * ~6800 lines of `C++`
 * ~4200 lines of `python`
+
+
+## Some samples of what SkellySim can do
+
+<video autoplay loop controls>
+<source src="assets/oocyte_movie.mp4" type="video/mp4">
+</video>
 
 
 
