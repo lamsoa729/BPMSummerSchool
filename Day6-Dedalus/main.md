@@ -1,21 +1,17 @@
-# Biophysical Modeling Workshop
 
-## Day 2: aLENS introduction (part 1) 
-
-https://github.com/flatironinstitute/aLENS
-
-https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
-
+# Day 6: PDE solvers/methods (part 1: Dedalus)
 
 ## Today's Agenda
 
-| Day 2  (Monday 6/5) | General Introduction |
+| **Day 6  (Monday 6/12)** | **PDE solvers/methods (part 1: Dedalus)**|
 | --- | --- |
-| 9:00AM | Welcome and Introduction of BPM and CCB <br /> Speaker: Mike Shelley|
-| 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: Students |
-| 10:10AM | Break |
-| 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: Geraud Krawezik |
-| ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: Adam and Reza |
+| 9:00AM | Intro to Dedalus <br />  Speaker: **Keaton** | 
+| 9:30AM | Current projects (Oscillating active dipolar flows) <br /> Speaker: **Brato** |
+| 10:00AM | Break |
+| 10:10AM | Current projects (Heterochromatin condensation) <br /> Speaker: **Alex**|
+| 10:30AM | Tutorial: Running Dedalus<br /> Instructor: **Keaton**|
+| ~11:00AM | Break|
+| ~11:10AM | Tutorial: Visualizing Dedalus and free play (active fluid simulations) <br /> Instructor: **Keaton**|
 
 
 
