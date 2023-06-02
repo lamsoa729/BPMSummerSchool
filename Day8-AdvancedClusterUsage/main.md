@@ -14,11 +14,10 @@
 [conda cheatsheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf)
 
 
+
 # SLURM Tutorial
-
+<h3 style="color:rgb(25, 158, 72)">Christopher Edelmaier (CCB)</h3>
 How to run jobs efficiently on Flatiron's clusters
-
-<h3 style="color:#ce3232">Christopher Edelmaier (CCB)</h3>
 
 
 ## Slurm
@@ -27,7 +26,7 @@ How to run jobs efficiently on Flatiron's clusters
   - With a job scheduler! Also known as a queue system
 - Flatiron uses [Slurm](https://slurm.schedmd.com) to schedule jobs
 
-<img width="30%" src="./assets/Slurm_logo.png"><\img>
+<center><img width="30%" src="./assets/Slurm_logo.png"></center>
 
 
 ## Slurm
@@ -158,15 +157,8 @@ This all still runs on a single node. But we have a whole cluster, let's talk ab
 
 
 
-
-
-
-
-
-
-
-
 # Large Batch Runs with disBatch
+### Nick Carriero, SCC
 
 
 ## High throughput computing: Need to run the same code many times
