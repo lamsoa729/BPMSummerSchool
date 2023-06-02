@@ -39,7 +39,7 @@ TODO: upload presentation
 ### Instructors: Adam and Reza
 
 
-## Pre-software installation
+## Pre-software installation (_aLENS_)
 - Docker desktop
   - Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
   - Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
@@ -51,6 +51,27 @@ TODO: upload presentation
   - Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
   - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
 
+
+## Git installation
+*Instructions to get your laptop set up before the session*
+
+- Windows
+   - See next slide
+- Mac
+  - Install xcode: open a terminal and run
+     - `xcode-select --install`
+  - Install VS Code: https://code.visualstudio.com/docs/setup/mac
+- Linux
+   - Install VS Code: https://code.visualstudio.com/docs/setup/linux
+
+
+## Windows Instructions
+- Follow the three steps at this link to install WSL, VS Code, and the WSL extension for VS Code: https://code.visualstudio.com/docs/remote/wsl#_installation
+- Check if your installation worked: follow these instructions to open VS Code and connect to WSL: https://code.visualstudio.com/docs/remote/wsl#_open-a-remote-folder-or-workspace
+- If you see "WSL" in the bottom left of your VS Code window, your installation is working
+
+
+## Cluster setup
 
 
 <!-- ### Implicit Fields -->

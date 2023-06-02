@@ -23,6 +23,7 @@ body {
   color: #5c5c5c;
 }
 
+
 ::selection {
   color: #fff;
   background: rgba(0, 0, 0, 0.99);
@@ -73,9 +74,12 @@ body {
 /*********************************************
  * OTHER
  *********************************************/
+
+/* text alignment of regular text here */
 .reveal p {
   margin: 20px 0;
   line-height: 1.3;
+  text-align: left;
 }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -98,7 +102,7 @@ body {
 .reveal ol,
 .reveal dl,
 .reveal ul {
-  display: inline-block;
+  display: block; /* aligns lists to the leftproperly */
   text-align: left;
   margin: 0 0 0 1em;
 }
@@ -123,8 +127,9 @@ body {
 .reveal ul ol,
 .reveal ol ol,
 .reveal ol ul {
-  display: block;
+  display: block; /* aligns lists to the leftproperly */
   margin-left: 40px;
+  text-align: left;
 }
 
 .reveal dt {
@@ -344,6 +349,8 @@ body {
 }
 
 .reveal li {
+  box-align: left;
+  text-align: left;
   margin-bottom: 0.3em;
 }
 

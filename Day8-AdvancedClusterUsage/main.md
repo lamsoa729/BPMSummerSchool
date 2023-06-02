@@ -7,7 +7,7 @@
 | 10:10AM | Tutorial: Slurm <br /> Speaker: **Chris**|
 | 10:30AM | Tutorial: Large batch runs with DisBatch <br /> Instructor: **Nick**|
 | ~11:00AM | Break|
-| ~11:10AM | Testing code for correctness and efficiency <br /> Speaker: **Vickram**|
+| ~11:10AM | Testing code for correctness and efficiency <br /> Speaker: **Vikram**|
 
 
 # Running Programs and Environment Management

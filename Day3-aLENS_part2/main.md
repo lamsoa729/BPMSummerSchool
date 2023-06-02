@@ -30,6 +30,7 @@ TODO: upload presentation
 # Actin, motors, and confinment modeling
 ### Dimitrios Vavylonis
 TODO: upload presentation
+<!-- <div style="text-align: left"> TODO: upload presentation </div> -->
 
 
 
@@ -44,7 +45,41 @@ TODO: upload presentation
 
 
 ## Generate data to analyze
+TODO: run aLENS simulation of active 3D nematic
+1. Start up docker container and connect to it with 
+      ```bash
+      docker exec -it alens /bin/bash
+      ```
+2. From this CLI, navigate to the `Run` directory
+    ```bash
+    cd /root/Run 
+    ```
 
+3.  While still in the CLI, copy the example configuration to the data folder
+
+    ```bash
+    cp -r ~/aLENS/Examples/Active3DNematic .
+    cd Active3DNematic
+    ```
+
+4.  Copy the contents of the `Run` template directory from aLENS to the data folder as well
+
+    ```bash
+    cp -r ~/aLENS/Run/* .
+    ```
+
+    You should now see an `aLENS.X` executable in this directory along with `result` and `script` directories containing useful scripts for processing, storing, and cleaning up generated files.
+
+
+5.  Run _aLENS_
+
+    ```bash
+    ./aLENS.X
+    # or to control the number of cores used
+    OMP_NUM_THREADS=<number_of_cores> ./aLENS.
+    ```
+
+Let this run in the background while we analyze the data from a previous run.
 
 
 ## Data organization file formats
@@ -58,31 +93,37 @@ Data is put into `result/result#-#/` directories to prevent surpassing file limi
   * Human readable files of VTK format for XML files
 
 
-
 ## Ascii data files
 
 ### SylinderAscii_#.dat
 
 First two lines: Number of sylinders, time step. 
+<small>
 | | *Sylinder type | Global ID | Radius | Minus end x-pos | Minus end y-pos | Minus end z-pos | Plus end x-pos | Plus end y-pos | Plus end z-pos | Group |
 | ------------ | ------------------------------------------ | --------- | ------ | --------------- | --------------- | --------------- | -------------- | -------------- | -------------- | ----- |
 | **Option/parameter type** | ‘C’  or ‘S’ | int | float | float | float | float | float | float | float | int |
 | **Example line** | C | 0 | .0125 | 0 | 0.5 | 0.57 | 20 | 0.5 | 0.57 | -1 |
+</small>
+
 *‘C’ for regular cylinder, ‘S’ for stationary sylinder
+
+TODO: picture of text
+
 
 ### ProteinAscii_#.dat
 First two lines: Number of proteins, time step. (These do not get read for initial condition.)
+<small>  
 | Name | Protein character | Global ID | Protein tag | End 0 x-pos | End 0 y-pos | End 0 z-pos | End 1 x-pos | End 1 y-pos | End 1 z-pos | End 0 bind ID | End 1 bind ID |
 | ------------ | ----------------- | --------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | --------------------- | --------------------- |
 | **Option/parameter type** | ‘P’ | int | int | float | float | float | float | float | float | int (-1 if not bound) | int (-1 if not bound) |
-| **Example line** | P | 41 | 0 | 8.85976 | 0.5 | 0.5 | 8.85976 | 0.5 | 0.5 | -1 | 2 |
+| **Example line** | P | 41 | 0 | 8.85976 | 0.5 | 0.5 | 8.85976 | 0.5 | 0.5 | -1 | 2 | 
+</small>
+
+TODO: picture of text
 
 
 ## `aLENS_analysis` package for dealing with data
-Often easier to deal with one file than 10$^3$ individual time step files.
-
-`aLENS_analysis` provides collection of ascii and vtk data into HDF5 files for easier analysis.
-
+Often easier to deal with one file than 10$^3$ individual time step files.  `aLENS_analysis` provides collection of ascii and vtk data into HDF5 files for easier analysis.
 Other functions:
 * Fast common post-processing: autocorrelation functions, density functions, stress calculations, etc.
 * Graphing helper functions
@@ -97,7 +138,7 @@ $ git clone https://github.com/flatironinstitute/aLENS_analysis.git
 $ cd aLENS_analysis
 
 # Set up conda environment
-$ conda create -n alens_analysis --file environment.yml
+$ conda env create --file environment.yml
 $ conda activate alens_analysis
 # or venv environment
 $ python -m venv alens_analysis
@@ -108,24 +149,31 @@ $ pip install -r requirements.txt
 $ pip install -e .
 
 ```
-<!-- Try to get conda environment working  -->
 
 
 ## Running data collection routine
 
 ```bash
 $ analens -A collect
+raw_MixMotorSliding
+Made time data set in 0.6143820285797119 seconds.
+Made sylinder data set in 0.3454399108886719 seconds.
+Made protin data set in 1.6398038864135742 seconds.
+Made raw data file in a total of 2.6002700328826904 seconds.
+ HDF5 raw created in 2.7403640747070312
 
 ```
-Should see new directory in simulation folder called `analysis` with `MixMotorSliding.h5` file.
-HDF5 is a hierarchical data format that allows for fast access to large datasets.
+You should see new directory in simulation folder called `analysis` with `MixMotorSliding.h5` file.
+
+* HDF5 is a hierarchical data format that allows for fast access to large datasets.  Learn more about HDF5 and other data formats [here](https://www.neonscience.org/resources/learning-hub/tutorials/about-hdf5) ([video](https://vimeo.com/showcase/7164070/video/797753028) and [slides](https://sciware.flatironinstitute.org/26_DataFormats/slides.html))
 
 
 ## Commandline interface for HDF5 data
 
-Useful tools
-* `h5ls`: list structure of HDF5 file
-* `h5dump`: print entire contents of HDF5 file
+Useful tools:
+
+-  `h5ls`: list structure of HDF5 file
+-  `h5dump`: print entire contents of HDF5 file
 
 ```bash
 $ cd analysis
@@ -146,7 +194,7 @@ $ h5dump -d /raw_data/proteins Run.h5
 
 First set up ipython kernel for conda environment
   ```bash
-  $ python -m ipykernel install --user --name  alens--display-name "Python (<name_of_env>)"
+  $ python -m ipykernel install --user --name  alens_analysis --display-name "Python (alens_analysis)"
   ```
   and then run jupyter lab
   ```bash 
@@ -154,21 +202,9 @@ First set up ipython kernel for conda environment
   ```
 
 
-<!-- TODO: What should they see for aLENS -->
-Todo: add example notebook image of using aLENS_analysis
+<img src="images/jupyter_lab_startup.png" alt="What jupyter lab starting up should look like." width="500"/>  
 
-## Calling functions from `aLENS_analysis` package
-todo: Image of calling functions from alens_analysis package
-
-
-<!-- ## Plotting data with `aLENS_analysis` -->
-
-
-## Saving post-process data in hdf5 file
-
-
-
-
+`<cmd-click>` or `<ctrl-click>` on the text that looks something like `http://localhost:8888/lab?token=<random_string>` to open jupyter lab in browser.
 
 
 <!-- Things to also talk about:

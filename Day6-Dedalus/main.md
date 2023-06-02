@@ -16,3 +16,5 @@
 
 
 # Introduction
+
+https://nbviewer.org/github/kburns/cism_dedalus_2023/blob/main/lecture_2_intro_to_dedalus.ipynb
