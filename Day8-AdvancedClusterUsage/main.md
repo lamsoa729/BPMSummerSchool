@@ -16,6 +16,154 @@
 
 # SLURM Tutorial
 
+How to run jobs efficiently on Flatiron's clusters
+
+<h3 style="color:#ce3232">Christopher Edelmaier (CCB)</h3>
+
+
+## Slurm
+
+- How do you share a set of computational resources among cycle-hungry scientists?
+  - With a job scheduler! Also known as a queue system
+- Flatiron uses [Slurm](https://slurm.schedmd.com) to schedule jobs
+
+<img width="30%" src="./assets/Slurm_logo.png"><\img>
+
+
+## Slurm
+
+- Wide adoption at universities and HPC centers. The skills you learn today will be highly transferable!
+- Flatiron has two clusters (rusty & popeye), each with multiple kinds of nodes (refer to sciware or the [wiki](https://wiki.flatironinstitute.org/)
+- Run slurm commands after you have logged into rusty (or popeye) (or if you have a Flatiron workstation)
+- Access all slurm commands via module system (`module load slurm`)
+
+
+## Slurm basics
+
+Write a _batch file_ that specifies the resources you need.
+
+<div class="two-column">  
+  <div class="grid-item r-stack">
+    <div class="fragment fade-out" data-fragment-index="0">
+
+```bash
+#!/bin/bash
+# File: myjob.sbatch
+# These comments are interpreted by Slurm as sbatch flags
+#SBATCH --mem=1G          # Memory?
+#SBATCH --time=02:00:00   # Time? (2 hours)
+#SBATCH --ntasks=1        # Run one instance
+#SBATCH --cpus-per-task=1 # Cores?
+#SBATCH --partition=genx
+
+# Load a compiler (GCC) and python
+module load gcc python3
+
+./myjob data1.hdf5
+```
+
+</div>
+<div class="fragment fade-in" data-fragment-index="0">
+
+- Submit the job to the queue with `sbatch myjob.sbatch`: \
+  `Submitted batch job 1234567`
+- Check the status with: `squeue --me` or `squeue -j 1234567`
+
+  </div>
+  </div>
+  <div class="grid-item">
+    <img src="assets/slurm/basics.svg" class="plain" width="600">
+  </div>
+</div>
+
+
+## Where is my output?
+
+- By default, anything printed to `stdout` or `stderr` ends up in `slurm-<jobid>.out` in your current directory
+- Can set `#SBATCH -o outfile.log` `-e stderr.log`
+- You can also run interactive jobs with `srun --pty ... bash`
+
+
+## What about multiple things?
+
+Let's say we have 10 files, each using 1 GB and 1 CPU
+
+<div class="two-column">  
+  <div class="grid-item">
+
+```bash
+#!/bin/bash
+#SBATCH --mem=10G           # Request 10x the memory
+#SBATCH --time=02:00:00     # Same time
+#SBATCH --ntasks=1          # Run one instance (packed with 10 "tasks")
+#SBATCH --cpus-per-task=10  # Request 10x the CPUs
+#SBATCH --partition=genx
+
+module load gcc python3
+
+for filename in data{1..10}.hdf5; do
+    ./myjob $filename &  # << the "&" runs the task in the background
+done
+wait  # << wait for all background tasks to complete
+```
+  </div>
+  <div class="grid-item">
+    <img src="assets/slurm/genxbg10.svg" class="plain" width="500"></img>
+  </div>
+</div>
+
+This all still runs on a single node. But we have a whole cluster, let's talk about how to use multiple nodes!
+
+
+## Slurm Tip \#1: Estimating Resource Requirements
+
+- Jobs don't necessarily run in order; most run via "backfill"
+  - Implication: specifying the smallest set of resources for your job will help it run **sooner**
+  - But don't short yourself!
+- Memory requirements can be hard to assess, especially if you're running someone else's code
+
+
+## Slurm Tip \#1: Estimating Resource Requirements
+
+1. Guess based on your knowledge of the program. Think about the sizes of big arrays and any files being read
+2. Run a test job
+3. Check the actual usage of the test job with:\
+`seff -j <jobid>`
+  - `Job Wall-clock time`: how long it took in "real world" time; corresponds to `#SBATCH -t`
+  - `Memory Utilized`: maximum amount of memory used; corresponds to `#SBATCH --mem`
+
+
+## Slurm Tip \#2: Choosing a Partition (CPUs)
+
+- Use `-p gen` to submit small/test jobs, `-p ccX` for real jobs
+  - `gen` has small limits and higher priority
+- The center and general partitions (`ccX` and `gen`) always allocate whole nodes
+  - **All cores, all memory**, reserved for you to make use of
+- If your job doesn't use a whole node, you can use the `genx` partition (allows multiple jobs per node)
+- Or run multiple things in parallel... (next talk)
+
+
+## Try it yourself
+
+- See packaged `mpi_omp_mockup` executable in the `slurm_examples` directory
+- This is a compiled, toy program for rusty
+- Reports MPI tasks and OpenMP threads
+
+
+## Examples
+
+- Each of the run\_slurm\_example[0-N].sh runs a separate configuration
+- These are examples, but you should think about your own batch files/scripts
+- Try it yourself!
+
+
+
+
+
+
+
+
+
 
 
 # Large Batch Runs with disBatch
