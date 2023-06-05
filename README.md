@@ -15,7 +15,7 @@ Collection of resources for the Biophysical Modeling Software Summer School
 | 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: **Students** |
 | 10:10AM | Break |
 | 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: **Geraud Krawezik** |
-| ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: **Adam and Reza** |
+| ~11:00AM | Tutorial: Pre-workshop software installation and cluster setup  <br /> Instructors: **Adam and Reza** |
 | **Day 2  (Tuesday 6/6)** | **aLENS (part 1)** |
 | 2:00PM | Introduction to aLENS (what can it do?) <br /> Speaker: **Adam** |
 | 2:30PM | Computational methods and code structure of aLENS  <br /> Speaker: **Bryce** |

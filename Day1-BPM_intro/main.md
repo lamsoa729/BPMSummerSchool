@@ -11,7 +11,7 @@
 | 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: **Students** |
 | 10:10AM | Break |
 | 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: **Geraud Krawezik** |
-| ~11:00AM | Tutorial: Cluster setup and IDE usage <br /> Instructors: **Adam and Reza** |
+| ~11:00AM | Tutorial: Pre-workshop software installation and cluster setup  <br /> Instructors: **Adam and Reza** |
 
 
 
@@ -26,11 +26,26 @@
 ### Speakers: All of you
 
 
+## Nikhil Agrawal
+### [presentation (click me)](images/CCBIntro_NikhilRAgrawal.pdf)
+
+
+## Staci Bell
+### [presentation (click me)](images/slide_stacibell.pdf)
+
+
+## Sidney Holden
+### [presentation (click me)](images/ccb_intro_slide_Sidney_Holden.pdf)
+
+
+##  Geoffrey Woollard
+### [presentation (click me)](images/ccb_intro_slide_Sidney_Holden.pdf)
+
+
 
 # Intro to resources available from SCC to the Cluster
 
 ### Speaker: Geraud Krawezik
-TODO: upload presentation
 
 
 
@@ -39,27 +54,54 @@ TODO: upload presentation
 ### Instructors: Adam and Reza
 
 
-## Pre-software installation (_aLENS_)
-- Docker desktop
-  - Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
-  - Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-  - (Optional) Docker engine
-    - Linux [https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/](https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/)
-    - Mac [https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
-- paraview [https://www.paraview.org/download/](https://www.paraview.org/download/)
-- hdf5 view
-  - Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
-  - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
+## Git and github
+TODO
 
 
-## Git installation
+## Conda
+```bash
+mkdir -p ~/miniconda3
+# If Linux
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+# If Mac
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda3/miniconda.sh
+
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+~/miniconda3/bin/conda init bash
+~/miniconda3/bin/conda init zsh
+```
+
+
+# Pre-software installation (_aLENS_)
+
+## Docker 
+- Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
+- Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+- (Optional) Docker engine
+   - Linux [https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/](https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/)
+   - Mac [https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
+
+
+## Paraview 
+Paraview is
+* Download paraview [https://www.paraview.org/download/](https://www.paraview.org/download/)
+* Follow instructions
+
+
+## HDF5view
+
+- Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
+- Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
+
+
+## VSCode installation (optional)
 *Instructions to get your laptop set up before the session*
 
 - Windows
    - See next slide
 - Mac
-  - Install xcode: open a terminal and run
-     - `xcode-select --install`
+  - Install xcode: open a terminal and run `xcode-select --install`
   - Install VS Code: https://code.visualstudio.com/docs/setup/mac
 - Linux
    - Install VS Code: https://code.visualstudio.com/docs/setup/linux
@@ -72,6 +114,7 @@ TODO: upload presentation
 
 
 ## Cluster setup
+Taken from 
 
 
 <!-- ### Implicit Fields -->
