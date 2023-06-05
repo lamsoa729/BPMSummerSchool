@@ -69,6 +69,16 @@ To install git, follow the instructions at [https://git-scm.com/downloads](https
    Download installer https://git-scm.com/download/win or if using WSL, follow Linux instructions
 
 
+## Github
+The following will make the rest of your installations easier since you will be able to just clone this repositories from github and click on the links to download the software.
+1. Set up a github account if you don't already have one.
+2. Visit the following repositories 'https://github.com/lamsoa729/BPMSummerSchool`
+3. (Optional) You can clone this onto your own computer by running the following command in your terminal
+   ```bash
+   git clone https://github.com/lamsoa729/BPMSummerSchool.git
+   ``` 
+
+
 ## Conda
 Conda is a package manager that allows you to install and manage multiple versions of software packages and their dependencies. It also allows you to create isolated environments for different projects.
 ```bash
