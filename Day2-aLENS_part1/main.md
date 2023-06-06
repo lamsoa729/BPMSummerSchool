@@ -9,11 +9,11 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 
 | Day 2  (Tuesday 6/6) | aLENS (part 1) |
 | --- | --- |
-| 2:00PM | Introduction to aLENS (what can it do) <br /> Speaker: Adam |
-| 2:30PM | Computational methods and code structure of aLENS  <br /> Speaker: Bryce |
+| 2:00PM | Introduction to _aLENS_ (what can it do) <br /> Speaker: Adam |
+| 2:30PM | A peek into the numerical methods behind _aLENS_ <br /> Speaker: Bryce |
 | 3:00PM | Break |
 | 3:10PM | Tutorial: Running aLENS for the first time <br /> Instructor: Adam |
-| ~3:45PM | Paraview and visualizing|
+| ~3:45PM | Tutorial: Paraview and visualizing data <br /> Instructors: Adam and Bryce|
 | ~4:00PM | Break  |
 | ~4:10PM | Explanation of parameters and playing with simulations |
 
@@ -32,7 +32,6 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
   - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
 
 
-
 ## Setup container
 
 1. Open [docker desktop](https://www.docker.com/blog/getting-started-with-docker-desktop/)
@@ -43,17 +42,19 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
    ```bash
    $ docker pull lamsoa729/alens:latest
    ```
-^#note: May need `sudo` depending on your docker installation.
+Note: May need `sudo` depending on your docker installation.
 
 
 
 # aLENS: What is it good for?
-### Adam Lamson
+### Speaker: Adam Lamson
+#### [Presentation (click me)](presentations/23-06-05_BPM_workshop_aLENS_intro.pdf)
+<img src="images/aLENS_Logo_RGB.png" alt="APGD_path.png" width="1000"/>       
 
 
 
 # A peek into the numerical methods behind aLENS
-### Bryce Palmer
+### Speaker: Bryce Palmer
 
 - Domain decomposition/load balancing/neighbor detection
 - Particle (rod) mobility
@@ -130,21 +131,9 @@ Thogether, these constraints form a constrained convex optimization problem, whi
 <img src="images/APGD_path.png" alt="APGD_path.png" width="500"/>       
 
 
+
 # Tutorial: Running aLENS for the first time 
-### Adam Lamson
-
-
-## Pre-software installation
-- Docker desktop
-  - Sign up at docker hub [https://hub.docker.com/](https://hub.docker.com/)
-  - Download docker desktop [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
-  - (Optional) Docker engine
-    - Linux [https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/](https://www.linux.com/topic/desktop/how-install-and-use-docker-linux/)
-    - Mac [https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3](https://medium.com/crowdbotics/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3)
-- paraview [https://www.paraview.org/download/](https://www.paraview.org/download/)
-- hdf5 view
-  - Sign up for service [https://www.hdfgroup.org/register/](https://www.hdfgroup.org/register/)
-  - Download at [https://www.hdfgroup.org/downloads/hdfview/#download](https://www.hdfgroup.org/downloads/hdfview/#download)
+### Instructor: Adam Lamson
 
 
 ## Creating a container
@@ -225,6 +214,12 @@ You now have access to an environment that can run aLENS but will create data fi
 
 6.  Stop the run by pressing `[ctrl+c]`
 7.  Execute run again as we did in step 4. Notice that the aLENS simulation continues from the last snapshot. This is a very useful restart feature for longer runs.
+8. To restart a simulation from the beginning, delete the `result/results#-#` directories and `TimeStepInfo.txt` file, then run again.
+    ```bash
+    rm -r result/result* TimeStepInfo.txt
+    ./aLENS.X
+    ```
+    The `TimeStepInfo.txt` file contains the information about the last successful snapshot and is used to restart a simulation from that state.
 
 
 ## Parameter and initial configuration files
@@ -236,15 +231,20 @@ The executable `aLENS.X` reads 2 input files (4 if specifying starting object co
 - `TubuleInitial.dat` specifies initial configuration of sylinders (optional).
 - `ProteinInitial.dat` specifies initial configuration of proteins (optional).
 
+
 ## Data organization file formats
 Data is put into `result/result#-#/` directories to prevent surpassing file limit on ceph.
 
-* Ascii data files: SylinderAscii_#.dat, ProteinAscii_#.dat
+* Ascii data files: `SylinderAscii_#.dat`, `ProteinAscii_#.dat`
   * Human readable positions and orientations
-* XML VTK files: ConBlock\_r#\_#.vtp, Sylinder\_r#\_#.vtp, Protein\_r#\_#.vtp
+* XML VTK files: `ConBlock_r#_#.vtp`, `Sylinder_r#_#.vtp`, `Protein_r#_#.vtp`
   * Binary files containing all information of systems state. Multiple files for different MPI ranks.
-* VTK header files: ConBlock_#.pvtp, Sylinder_#.pvtp, Protein_#.pvtp
+* VTK header files: `ConBlock_#.pvtp`, `Sylinder_#.pvtp`, `Protein_#.pvtp`
   * Human readable files of VTK format for XML files
+
+More info can be found at:
+* [https://github.com/flatironinstitute/aLENS](https://github.com/flatironinstitute/aLENS)
+* [https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html](https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html)
 
 
 
@@ -385,6 +385,9 @@ Instead of modifying _aLENS_ to generate a specific initial configuration, we ca
     ```bash
     python3 ~/aLENS/Utils/gen_flexible_init.py flex_fil_param.py
     ``` 
-1. Look at the initial configuration files that were generated. Notice the new `TubuleInitAscii_#.dat` file has the Linker ID. 
-1. Run the simulations
-1. Visualize the results in ParaView.
+
+
+### Example: Generating a bead-spring model of chromatin
+* Look at the initial configuration files that were generated. Notice the new `TubuleInitAscii_#.dat` file has the Linker ID. 
+* Run the simulations
+* Visualize the results in ParaView.
