@@ -12,7 +12,7 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 | 2:00PM | Introduction to _aLENS_ (what can it do) <br /> Speaker: Adam |
 | 2:30PM | A peek into the numerical methods behind _aLENS_ <br /> Speaker: Bryce |
 | 3:00PM | Break |
-| 3:10PM | Tutorial: Running aLENS for the first time <br /> Instructor: Adam |
+| 3:10PM | Tutorial: Running _aLENS_ for the first time <br /> Instructor: Adam |
 | ~3:45PM | Tutorial: Paraview and visualizing data <br /> Instructors: Adam and Bryce|
 | ~4:00PM | Break  |
 | ~4:10PM | Explanation of parameters and playing with simulations |
@@ -151,14 +151,15 @@ Thogether, these constraints form a constrained convex optimization problem, whi
 1. Make a folder to access your simulation data stored generated in docker container
 
    ```bash
-   % mkdir my_alens_data; cd my_alens_data
+   $ mkdir my_alens_data; cd my_alens_data
+   $ pwd
    ```
+   This will be the path to your data folder. You will need to replace `<path/to/my_alens_data>` with this path in the next step.
 
 1. Create and run a docker container from the image pulled from dockerhub
    ```bash
-   docker run --volume=.:/root/Run --name alens -dit lamsoa729/alens:latest
+   docker run --volume=<path/to/my_alens_data>:/root/Run --name alens -dit lamsoa729/alens:latest
    ```
-   <!-- docker run --volume=<path/to/my_alens_data>:/root/Run --name alens -dit lamsoa729/alens:latest -->
 
 You now have access to an environment that can run aLENS but will create data files on your local computer.
 
@@ -322,6 +323,7 @@ Visualizations are created and interacted with using paraview. Be sure to have t
         <img src="images/Screen_Shot_2022-11-14_at_5.11.41_PM.png" alt="Movie making" width="500"/>
 
     You should now see a .avi file in your simulation directory.         
+
 
 
 ## Creating a your own ParaView state file (a live tutorial)
