@@ -39,7 +39,7 @@
 
 
 ##  Geoffrey Woollard
-### [presentation (click me)](images/ccb_intro_slide_Sidney_Holden.pdf)
+### [presentation (click me)](images/poster_geoff.pdf)
 
 
 ## Ana Cristina Molina Taborda
@@ -141,7 +141,6 @@ HDF5view is a tool that enables you to view and interact with the otherwise bind
 
 ## Cluster setup
 See the Flatirons wiki https://docs.simonsfoundation.org/index.php/RemoteConnect to follow along with the instructions for setting up your cluster account.
-
 
 <!-- ### Implicit Fields -->
 
