@@ -69,15 +69,18 @@ It automatically performs
 - Load balancing to rebalance the particle distribution as the system evolves. 
 - Neighbor detection to check for collisions between particles.
 
+
 ## Example domain decomposition:
 
 ![domain_decom_1.png](images/domain_decom_1.png)
+
 
 ## An important caveat to be aware of
 
 aLENS' Domain decomposition and load balancing ensures that the number of *particles* per process remains constant, not the number of springs. 
   
 This can lead to load imbalance and increased communication costs/computation time. 
+
 
 ## Example with poor load balancing 
 
@@ -86,11 +89,13 @@ If we have a large number of springs in our upper left-hand corner, then the red
 
 As a result, aLENS performs best when the distribution of springs is similar to the distribution of particles. If you have strong differences between the two, that's fine; it'll just cause some inefficiency. 
 
+
 ## Particle mobility
 
 The mobility problem consists of finding the unconstrained translational and rotational velocities of all particles given the forces and torques that act upon them. We abstractly write this as $V = M(F)$. 
 
 aLENS was programmed to accept any linear mobility operator. 
+
 
 ## What mobility operators does aLENS support?
 
