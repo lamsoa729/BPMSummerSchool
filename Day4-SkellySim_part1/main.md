@@ -37,7 +37,31 @@ Robert Blackwell (author)
   * Periphery: Smooth/convex containing volume (cell boundary)
 
 
+
 ## Why is SkellySim?
+### Some motivation
+
+### Microtubule-induced cytoplasmic streaming in oocytes
+
+<img src="assets/cytoplasmic_streaming_experiment.png" width="22%">
+<img src="assets/cytoplasmic_streaming_simulation.png" width="45%">
+
+
+### Rotation modes of MTs in confined geometry
+
+<video autoplay loop controls>
+<source src="assets/rotation_experiment.mp4" type="video/mp4">
+</video>
+
+
+### Switching modes in confined geometry
+
+<video autoplay loop controls>
+<source src="assets/rotation_experiment.mp4" type="video/mp4">
+</video>
+
+
+## Why is SkellySim? (2)
 ### Can't aLENS do those things?
 
 * In some ways, yes. In others, no.
@@ -45,13 +69,6 @@ Robert Blackwell (author)
   * More rigorous flexible filaments
   * No fiber-fiber interaction
   * Doesn't scale to millions of elements
-
-
-## Why is SkellySim? (2)
-### Microtubule-induced cytoplasmic streaming in oocytes
-
-<img src="assets/cytoplasmic_streaming_experiment.png" width="22%">
-<img src="assets/cytoplasmic_streaming_simulation.png" width="45%">
 
 
 ## Why is SkellySim? (3)
@@ -93,12 +110,23 @@ Robert Blackwell (author)
 * ~4200 lines of `python`
 
 
-## Some samples of what SkellySim can do
 
+## Some samples of what SkellySim can do
+### Oocytes!
 <video autoplay loop controls>
 <source src="assets/oocyte_movie.mp4" type="video/mp4">
 </video>
 
 
+### Rotation modes of MTs in confined geometry
 
-# Computational methods and code structure
+<video autoplay loop controls width="40%">
+<source src="assets/rotation_simulation.mp4" type="video/mp4">
+</video>
+
+
+### Switching modes of MTs in confined geometry
+
+<video autoplay loop controls width="40%">
+<source src="assets/switching_simulation.mp4" type="video/mp4">
+</video>
