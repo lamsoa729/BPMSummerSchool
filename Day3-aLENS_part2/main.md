@@ -9,12 +9,12 @@ https://github.com/flatironinstitute/aLENS_analysis/
 
 ## Today's Agenda
 
-| Day 3  (Wednesday 6/7) | aLENS (part 2) |
+| Day 3 <br /> (Wed 6/7) | aLENS (part 2) |
 | --- | --- |
-| 9:00AM | Variations and current projects (Flexible filaments and transient networks) <br /> Speaker: Adam | 
-| 9:30AM | Variations and current projects (Semi-flexible and growing filaments) <br /> Speaker: Dimitrios |
+| 9:00AM | Current projects (Flexible filaments and transient networks) <br /> Speaker: Adam | 
+| 9:30AM | Current projects (Semi-flexible and growing filaments) <br /> Speaker: Dimitrios |
 | 10:00AM | Break |
-| 10:10AM | Variations and current projects (Bacterial growth) <br /> Speaker: Taeyoon|
+| 10:10AM | Current projects (Bacterial growth) <br /> Speaker: Taeyoon|
 | 10:40AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: Adam |
 | ~11:10AM | Break|
 | ~11:20AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: Adam |
@@ -29,17 +29,19 @@ This has some useful tools for viewing HDF5 files. We will use it to view the da
 
 # _ChromaLENS_: Long flexible biopolymers
 ### Adam Lamson
+#### [Presentation (click me)](presentations/Long_flexible_biofilaments.pdf)
 
 
 
 # Actin, motors, and confinment modeling
 ### Dimitrios Vavylonis
-<!-- <div style="text-align: left"> TODO: upload presentation </div> -->
+<!-- #### [Presentation (click me)](presentations/Long_flexible_biofilaments.pdf) -->
 
 
 
 # Growing bacteria colonies
 ### Taeyoon Kim
+#### [Presentation (click me)](presentations/Workshop_06072023_Taeyoon_Kim.pdf)
 
 
 
@@ -60,8 +62,8 @@ This has some useful tools for viewing HDF5 files. We will use it to view the da
 3.  While still in the CLI, copy the example configuration to the data folder
 
     ```bash
-    cp -r ~/aLENS/Examples/Active3DNematic .
-    cd Active3DNematic
+    cp -r ~/aLENS/Examples/Active3DNematics .
+    cd Active3DNematics
     ```
 
 4.  Copy the contents of the `Run` template directory from aLENS to the data folder as well
@@ -129,7 +131,8 @@ Other functions:
 
 
 ## Installing `aLENS_analysis` from git
-
+Outside of the docker run this in your local terminal
+(pytorch -> torch)
 ```bash
 # Copy repository
 $ git clone https://github.com/flatironinstitute/aLENS_analysis.git
@@ -140,7 +143,7 @@ $ conda env create --file environment.yml
 $ conda activate alens_analysis
 # or venv environment
 $ python -m venv alens_analysis
-$ source analysis/bin/activate
+$ source alens_analysis/bin/activate
 $ pip install -r requirements.txt
 
 # Install analysis package
@@ -161,7 +164,7 @@ Made raw data file in a total of 2.6002700328826904 seconds.
  HDF5 raw created in 2.7403640747070312
 
 ```
-You should see new directory in simulation folder called `analysis` with `MixMotorSliding.h5` file.
+You should see new directory in simulation folder called `analysis` with `raw_MixMotorSliding.h5` file.
 
 * HDF5 is a hierarchical data format that allows for fast access to large datasets.  Learn more about HDF5 and other data formats [here](https://www.neonscience.org/resources/learning-hub/tutorials/about-hdf5) ([video](https://vimeo.com/showcase/7164070/video/797753028) and [slides](https://sciware.flatironinstitute.org/26_DataFormats/slides.html))
 
@@ -175,11 +178,11 @@ Useful tools:
 
 ```bash
 $ cd analysis
-$ h5ls Run.h5
-$ h5ls Run.h5/raw_data
-$ h5dump Run.h5
-$ h5dump -A Run.h5
-$ h5dump -d /raw_data/proteins Run.h5
+$ h5ls raw_MixMotorSliding.h5
+$ h5ls raw_MixMotorSliding.h5/raw_data
+$ h5dump raw_MixMotorSliding.h5
+$ h5dump -A raw_MixMotorSliding.h5
+$ h5dump -d /raw_data/proteins raw_MixMotorSliding.h5
  ```
 
 

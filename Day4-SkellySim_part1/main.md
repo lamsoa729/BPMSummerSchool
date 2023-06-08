@@ -7,12 +7,12 @@ https://github.com/flatironinstitute/SkellySim
 | Day 4  (Thursday 6/8) | SkellySim (part 1)                                                               |
 |-----------------------|----------------------------------------------------------------------------------|
 | 9:00AM                | Intro to SkellySim (**Robert Blackwell (SCC)**)                                  |
-| 9:30AM                | Computational methods and code structure <br /> **David Stein (CCB)**            |
+| 9:30AM                | Computational methods of SkellySim <br /> **David Stein (CCB)**            |
 | 10:00AM               | Break                                                                            |
 | 10:10AM               | Tutorial: Running SkellySim for the first time <br /> **Robert Blackwell (SCC)** |
 | ~10:40AM              | Tutorial: Parameter files and free play <br /> **Robert Blackwell (SCC)**        |
 | ~11:00AM              | Break                                                                            |
-| ~11:10AM              | Free play (Speaker: **Coordinators**)                                            |
+| ~11:10AM              | Free play (Instructors: **Coordinators**)                                            |
 | ~11:40AM              | Visualizing with Blender (**Reza Farhadifar, CCB**)                              |
 |                       |                                                                                  |
 
@@ -21,9 +21,9 @@ https://github.com/flatironinstitute/SkellySim
 # Intro to
 <img src="assets/SkellySim_Logo_RGB_Full.png">
 
-https://github.com/flatironinstitute/SkellySim
+#### https://github.com/flatironinstitute/SkellySim 
 
-Robert Blackwell (author)
+### Robert Blackwell (author)
 
 
 ## What is SkellySim?
@@ -57,7 +57,7 @@ Robert Blackwell (author)
 ### Switching modes in confined geometry
 
 <video autoplay loop controls>
-<source src="assets/rotation_experiment.mp4" type="video/mp4">
+<source src="assets/switching_experiment.mp4" type="video/mp4">
 </video>
 
 
@@ -130,3 +130,15 @@ Robert Blackwell (author)
 <video autoplay loop controls width="40%">
 <source src="assets/switching_simulation.mp4" type="video/mp4">
 </video>
+
+
+
+# Computational methods of SkellySim  
+### David Stein
+#### [Presentation (click me)](assets/SkellySimMethods.pdf)
+
+
+
+# Visualizing with Blender
+### Reza Farhadifar
+<!-- #### [Presentation (click me)](assets/Long_flexible_biofilaments.pdf) -->
