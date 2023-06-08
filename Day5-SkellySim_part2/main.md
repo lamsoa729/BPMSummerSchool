@@ -7,14 +7,17 @@
 | 9:00AM | Current projects (Oocyte flows) <br />  Speaker: **Reza** | 
 | 9:30AM | Current projects (Rotating centrosomes) <br /> Speaker: **David** |
 | 10:00AM | Break |
-| 10:10AM | Tutorial: Analysis of SkellySim <br /> Instructor: **Reza**|
+| 10:10AM | aLENS or SkellySim: Free play <br /> Instructors: **Coordinators**|
 | ~11:10AM | Break|
-| ~11:20AM | Free play <br /> Speaker: **Coordinators**|
+| ~11:20AM | Free play <br /> Instructors: **Coordinators**|
 
 
 
-# Current projects (Oocyte flows)
+# Oocyte flows
+### Reza Farhadifar
 
 
 
-# Current projects (Rotating centrosomes)
+# Rotating centrosomes
+### David Stein 
+#### [Presentation (click me)](assets/Asters.pdf)

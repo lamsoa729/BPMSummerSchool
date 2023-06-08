@@ -35,7 +35,7 @@ This has some useful tools for viewing HDF5 files. We will use it to view the da
 
 # Actin, motors, and confinment modeling
 ### Dimitrios Vavylonis
-<!-- #### [Presentation (click me)](presentations/Long_flexible_biofilaments.pdf) -->
+#### [Presentation (click me)](presentations/BPM_software_fi_23.pdf)
 
 
 
