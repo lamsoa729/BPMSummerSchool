@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 # Discretization parameters
 L = 6 * np.pi
 N = 128
+dealias = 2
 dtype = np.float64
 timestepper = d3.RK443
 initial_dt = 1e-2
@@ -25,9 +26,8 @@ S0 = 1      # Base order-parameter for spring field
 # Bases
 coords = d3.CartesianCoordinates('x', 'y')
 dist = d3.Distributor(coords, dtype=dtype)
-xbasis = d3.RealFourier(coords['x'], size=N, bounds=(-L/2, L/2), dealias=3/2)
-ybasis = d3.RealFourier(coords['y'], size=N, bounds=(-L/2, L/2), dealias=3/2)
-x, y = dist.local_grids(xbasis,ybasis)
+xbasis = d3.RealFourier(coords['x'], size=N, bounds=(-L/2, L/2), dealias=dealias)
+ybasis = d3.RealFourier(coords['y'], size=N, bounds=(-L/2, L/2), dealias=dealias)
 
 # Fields
 P = dist.Field(name='P', bases=(xbasis,ybasis))                        # Pressure
