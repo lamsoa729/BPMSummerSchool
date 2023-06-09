@@ -10,7 +10,6 @@ https://github.com/flatironinstitute/SkellySim
 | 9:30AM                | Computational methods of SkellySim <br /> **David Stein (CCB)**            |
 | 10:00AM               | Break                                                                            |
 | 10:10AM               | Tutorial: Running SkellySim for the first time <br /> **Robert Blackwell (SCC)** |
-| ~10:40AM              | Tutorial: Parameter files and free play <br /> **Robert Blackwell (SCC)**        |
 | ~11:00AM              | Break                                                                            |
 | ~11:10AM              | Free play (Instructors: **Coordinators**)                                            |
 | ~11:40AM              | Visualizing with Blender (**Reza Farhadifar, CCB**)                              |
@@ -136,6 +135,21 @@ https://github.com/flatironinstitute/SkellySim
 # Computational methods of SkellySim  
 ### David Stein
 #### [Presentation (click me)](assets/SkellySimMethods.pdf)
+
+
+
+# Tutorial: Running SkellySim for the first time
+### Robert Blackwell
+#### https://binder.flatironinstitute.org/~rblackwell/skelly_sim
+Note: If it doesn't work, with the text
+```bash
+Found built image, launching...
+Launching server...
+User <youremail> already has a running server.
+```
+click the 'Flatiron Institute' logo at the top of the page and then
+click 'Check your currently running server' on the righthand side of the page. 
+This should bring you to the jupyter notebook.
 
 
 
