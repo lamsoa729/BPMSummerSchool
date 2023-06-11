@@ -7,14 +7,16 @@ logger = logging.getLogger(__name__)
 
 
 # Discretization parameters
-L = 6 * np.pi
+L = 8 * np.pi
 N = 128
 dealias = 2
 dtype = np.float64
 timestepper = d3.RK443
 initial_dt = 1e-2
 safety = 0.5
-stop_sim_time = 10
+stop_sim_time = 15
+snapshots_dt = 0.1
+scalars_dt = 0.1
 
 # Physical parameters
 eta = 1     # Relative viscosity
@@ -23,7 +25,7 @@ alpha = -8  # Dipole strength
 ks = 10     # Spring constant of alignment field
 S0 = 1      # Base order-parameter for spring field
 
-# Bases
+# Domain
 coords = d3.CartesianCoordinates('x', 'y')
 dist = d3.Distributor(coords, dtype=dtype)
 xbasis = d3.RealFourier(coords['x'], size=N, bounds=(-L/2, L/2), dealias=dealias)
@@ -40,7 +42,7 @@ tau_p = dist.Field(name='tau_p')
 problem = d3.IVP([u, P, Q, H, tau_p], namespace=locals())
 problem.add_equation("H - lap(Q) - ks * S0**2 * Q = -ks * Trace(Q@Q) * Q")
 problem.add_equation("-grad(P) + eta*lap(u) - gamma*u + alpha*div(Q) = -div(Q@H - H@Q)")
-problem.add_equation("dt(Q) - H = -u@grad(Q) + Q@grad(u) + (transpose(grad(u)))@Q - 2*Q*Trace(Q@grad(u))")
+problem.add_equation("dt(Q) - H = -u@grad(Q) + Q@grad(u) + (grad(u).T)@Q - 2*Q*Trace(Q@grad(u))")
 problem.add_equation("div(u) + tau_p = 0")
 problem.add_equation("integ(P) = 0")
 
@@ -49,23 +51,28 @@ solver = problem.build_solver(timestepper)
 solver.stop_sim_time = stop_sim_time
 
 # Initial conditions
+I = dist.IdentityTensor(coords)
 Q.fill_random(layout='g', seed=3)
 Q.low_pass_filter(shape=(16, 16))
-Q_sym = (Q + d3.transpose(Q)) / 2
-Q['g'] = Q_sym.evaluate()['g']
 Q['g'] *= 1e-3
 Q['g'][0,0] += 0.5
+Q_sym = (Q + Q.T)/2
+Q['g'] = Q_sym.evaluate()['g']
+
+# Analysis
+snapshots = solver.evaluator.add_file_handler('periodic_data/snapshots', sim_dt=snapshots_dt, max_writes=1, parallel='gather')
+snapshots.add_task(u)
+snapshots.add_task(-d3.div(d3.skew(u)), name='vorticity')
+snapshots.add_task(Q)
+snapshots.add_task(d3.Trace(Q @ Q.T), name='I2(Q)')
+
+scalars = solver.evaluator.add_file_handler('periodic_data/scalars', sim_dt=scalars_dt, parallel='gather')
+scalars.add_task(d3.Average(u@u/2), name='KE')
 
 # CFL
 cfl = d3.CFL(solver, initial_dt=initial_dt, cadence=10, safety=safety, max_change=1.5,
              min_change=0.5, max_dt=initial_dt, threshold=0.05)
 cfl.add_velocity(u)
-
-# Analysis
-snapshots = solver.evaluator.add_file_handler('snapshots', sim_dt=0.1, max_writes=50)
-snapshots.add_task(u)
-snapshots.add_task(-d3.div(d3.skew(u)), name='vorticity')
-snapshots.add_task(Q)
 
 # Main loop
 try:

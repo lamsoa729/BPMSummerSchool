@@ -22,20 +22,19 @@ def main(filename, start, count, output):
     """Save plot of specified tasks for given range of analysis writes."""
 
     # Plot settings
-    tasks = [('vorticity', tuple(), (0,0)),
-             ('Q', (0,0), (1,0)),
-             ('Q', (0,1), (1,1)),
-             ('Q', (1,1), (1,2))]
+    tasks = ['vorticity', 'I2(Q)']
+    cmaps = ['RdBu_r', 'viridis']
+    clims = [(-8, 8), (0.85, 1.05)]
     scale = 3
     dpi = 200
     title_func = lambda sim_time: 't = {:.3f}'.format(sim_time)
     savename_func = lambda write: 'write_{:06}.png'.format(write)
 
     # Layout
-    nrows, ncols = 2, 3
+    nrows, ncols = 1, 2
     image = plot_tools.Box(1, 1)
-    pad = plot_tools.Frame(0.2, 0.1, 0, 0)
-    margin = plot_tools.Frame(0.2, 0.1, 0, 0)
+    pad = plot_tools.Frame(0.15, 0.05, 0.02, 0.02)
+    margin = plot_tools.Frame(0.1, 0.05, 0, 0)
 
     # Create multifigure
     mfig = plot_tools.MultiFigure(nrows, ncols, image, pad, margin, scale)
@@ -43,15 +42,13 @@ def main(filename, start, count, output):
     # Plot writes
     with h5py.File(filename, mode='r') as file:
         for index in range(start, start+count):
-            for task, comp, subax in tasks:
+            for n, task in enumerate(tasks):
                 # Build subfigure axes
-                axes = mfig.add_axes(*subax, [0, 0, 1, 1])
+                i, j = divmod(n, ncols)
+                axes = mfig.add_axes(i, j, [0, 0, 1, 1])
                 # Call plot bot
                 dset = file['tasks'][task]
-                image_axes = (1 + len(comp), 2 + len(comp))
-                data_slices = (index,) + comp + (slice(None), slice(None))
-                title = task + str(comp)*(len(comp) != 0)
-                plot_tools.plot_bot(dset, image_axes, data_slices, title=title, even_scale=True, visible_axes=False, axes=axes)
+                plot_tools.plot_bot_3d(dset, 0, index, axes=axes, title=task, clim=clims[n], cmap=cmaps[n], visible_axes=False)
             # Add time title
             title = title_func(file['scales/sim_time'][index])
             title_height = 1 - 0.5 * mfig.margin.top / mfig.fig.y
