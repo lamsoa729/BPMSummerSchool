@@ -11,18 +11,17 @@
 # Set up our environment for this SLURM submission
 module -q purge
 module -q load openmpi
+module list
 
 # Helper functions to see what kind of system we are running on, and if we have GPUs that are accessible
 lscpu
 nvidia-smi
 
 # Print some helpful information
-export COMPUTED_CPUS_PER_TASK=$((${SLURM_CPUS_ON_NODE}/${SLURM_NTASKS_PER_NODE}))
 echo "Slurm nodes:              ${SLURM_NNODES}"
 echo "Slurm ntasks:             ${SLURM_NTASKS}"
 echo "Slurm ntasks-per-node:    ${SLURM_NTASKS_PER_NODE}"
 echo "Slurm cpus-per-task:      ${SLURM_CPUS_PER_TASK}"
-echo "Computed CPUs per task:   ${COMPUTED_CPUS_PER_TASK}"
 
 # Run the program
 OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK} mpirun -np ${SLURM_NTASKS} mpi_omp_mockup

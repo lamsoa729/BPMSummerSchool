@@ -32,9 +32,11 @@ How to run jobs efficiently on Flatiron's clusters
 ## Slurm
 
 - Wide adoption at universities and HPC centers. The skills you learn today will be highly transferable!
-- Flatiron has two clusters (rusty & popeye), each with multiple kinds of nodes (refer to sciware or the [wiki](https://wiki.flatironinstitute.org/)
+- Flatiron has two clusters (rusty & popeye), each with multiple kinds of nodes (refer to sciware or the [wiki](https://wiki.flatironinstitute.org/))
 - Run slurm commands after you have logged into rusty (or popeye) (or if you have a Flatiron workstation)
 - Access all slurm commands via module system (`module load slurm`)
+- How many of you have used Slurm before?
+  - How many have just used a Slurm script handed to you by someone else?
 
 
 ## Slurm basics
@@ -54,6 +56,9 @@ Write a _batch file_ that specifies the resources you need.
 #SBATCH --ntasks=1        # Run one instance
 #SBATCH --cpus-per-task=1 # Cores?
 #SBATCH --partition=genx
+
+# Make sure you have a clean module environment
+module -q purge
 
 # Load a compiler (GCC) and python
 module load gcc python3
@@ -98,6 +103,7 @@ Let's say we have 10 files, each using 1 GB and 1 CPU
 #SBATCH --cpus-per-task=10  # Request 10x the CPUs
 #SBATCH --partition=genx
 
+module -q purge
 module load gcc python3
 
 for filename in data{1..10}.hdf5; do
@@ -154,6 +160,14 @@ This all still runs on a single node. But we have a whole cluster, let's talk ab
 - Each of the run\_slurm\_example[0-N].sh runs a separate configuration
 - These are examples, but you should think about your own batch files/scripts
 - Try it yourself!
+
+
+## Summary of Slurm
+
+- **Always** talk to your mentor about your particular program and its needs and wants!
+- **No really always** make sure you understand what your program needs
+  - Does it run better with more processes or threads?
+  - Does this depend on the paramters controlling my program (*spoiler*: it does)
 
 
 
