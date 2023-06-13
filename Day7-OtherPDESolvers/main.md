@@ -2,7 +2,7 @@
 
 ## Today's Agenda
 
-| **Day 7  (Tuesday 6/13)** | **PDE solvers/methods (part 2: David’s, Dan’s, and Alex’s method)**|
+| **Day 7  (Tuesday 6/13)** | **PDE solvers/methods in complex geometries**|
 | --- | --- |
 | 2:00PM | Computation methods (Fast spectral solver) <br />  Speaker: **David** | 
 | 2:30PM | Computation methods (Fast spectral solver continued) <br />  Speaker: **Dan** |
