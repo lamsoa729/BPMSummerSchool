@@ -1,5 +1,5 @@
 
-# Day 6: PDE solvers/methods 
+# Day 6: PDE solvers/methods
 ## (part 1: Dedalus)
 
 
@@ -7,7 +7,7 @@
 
 | **Day 6 (Mon 6/12)** | **PDE solvers/methods (part 1: Dedalus)**|
 | --- | --- |
-| 9:00AM | Intro to Dedalus <br />  Speaker: **Keaton** | 
+| 9:00AM | Intro to Dedalus <br />  Speaker: **Keaton** |
 | 9:45AM | Current projects (Oscillating active dipolar flows) <br /> Speaker: **Brato** |
 | 10:10AM | Break |
 | 10:20AM | Current projects (Heterochromatin condensation) <br /> Speaker: **Alex**|
@@ -17,7 +17,7 @@
 
 
 
-# Intro to Dedalus
+# Introduction to Spectral Methods & Dedalus
 ### Keaton Burns
 **Resources:**
 - [Dedalus website](https://dedalus-project.org/)
@@ -37,18 +37,27 @@
 
 # Tutorial: Running Dedalus
 ### Keaton Burns
-<!-- Ok this was terrifying, copilot came up with this link all on it's own: -->
-<!-- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kburns/cism_dedalus_2023/HEAD?filepath=lecture_2_intro_to_dedalus.ipynb) -->
-[lecture 2 notebook](https://github.com/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_2_intro_to_dedalus.ipynb)
+- Lecture 2 Notebook: Basic Dedalus API -- Burgers & KdV equations <br />
+[[github]](https://github.com/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_2_intro_to_dedalus.ipynb)
+[[nbviewer]](https://nbviewer.org/github/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_2_intro_to_dedalus.ipynb)
+[[binder]](https://binder.flatironinstitute.org/v2/user/kburns/dedalus_v3?filepath=Day6-Dedalus%2Flecture_2_intro_to_dedalus.ipynb)
+[[colab]](https://colab.research.google.com/github/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_2_intro_to_dedalus.ipynb)
 
 
 
 # Tutorial: Visualizing Dedalus and free play (active fluid simulations)
 ### Keaton Burns
-[lecture 3 notebook](https://github.com/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_3_active_nematics.ipynb)
+- Lecture 3 Notebook: Tensorial Equations & Analysis -- Active Nematics <br />
+[[github]](https://github.com/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_3_active_nematics.ipynb)
+[[nbviewer]](https://nbviewer.org/github/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_3_active_nematics.ipynb)
+[[binder]](https://binder.flatironinstitute.org/v2/user/kburns/dedalus_v3?filepath=Day6-Dedalus%2Flecture_3_active_nematics.ipynb)
+[[colab]](https://colab.research.google.com/github/lamsoa729/BPMSummerSchool/blob/main/Day6-Dedalus/lecture_3_active_nematics.ipynb)
+- Standalone scripts and data:
+[[github]](https://github.com/lamsoa729/BPMSummerSchool/tree/main/Day6-Dedalus/lecture_3_data)
 
 
 
 # Other resources
-https://nbviewer.org/github/kburns/cism_dedalus_2023/blob/main/lecture_2_intro_to_dedalus.ipynb
+- [Official Dedalus tutorials](https://dedalus-project.readthedocs.io/en/latest/pages/tutorials.html)
+- [Dedalus CISM tutorials](https://kburns.github.io/cism_dedalus_2023/)
 
