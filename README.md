@@ -42,7 +42,6 @@ Collection of resources for the Biophysical Modeling Software Summer School
 | ~11:10AM | Free play <br /> Speaker: **Coordinators**|
 | ~11:40AM | Visualizing with Blender <br /> Speaker: **Reza**|
 | **Day 5  (Friday 6/9)** | **SkellySim (part 2)**|
-| --- | --- |
 | 9:00AM | Current projects (Oocyte flows) <br />  Speaker: **Reza** | 
 | 9:30AM | Current projects (Rotating centrosomes) <br /> Speaker: **David** |
 | 10:00AM | Break |
@@ -50,7 +49,6 @@ Collection of resources for the Biophysical Modeling Software Summer School
 | ~11:10AM | Break|
 | ~11:20AM | Free play <br /> Instructors: **Coordinators**|
 | **Day 6  (Monday 6/12)** | **PDE solvers/methods (part 1: Dedalus)**|
-| --- | --- |
 | 9:00AM | Intro to Dedalus <br />  Speaker: **Keaton** | 
 | 9:45AM | Current projects (Oscillating active dipolar flows) <br /> Speaker: **Brato** |
 | 10:10AM | Break |
