@@ -1,4 +1,3 @@
-
 # Day 6: PDE solvers/methods
 ## (part 1: Dedalus)
 
@@ -27,11 +26,14 @@
 
 # Oscillating active dipolar flows
 ### Brato Chakrabarti
+* [PDF Presentation](presentations/BPM_summer_oscillating_fluid.pdf)
+* [Keynote download](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/BPM_summer_oscillating_fluid.key)
 
 
 
 # Heterochromatin condensation
 ### Alex Rautu
+* [PDF Presentation](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/bpm-chromatin-rautu.pdf)
 
 
 
