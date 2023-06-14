@@ -4,3 +4,7 @@
 - Flatiron 7th floor classroom
 
 - [slides](https://lamsoa729.github.io/BPMSummerSchool/Day4-SkellySim_part1/slides.html) ([source](main.md))
+
+## Resources
+- [Github](https://github.com/flatironinstitute/SkellySim)
+- [Documentation](https://skellysim.readthedocs.io/en/latest/)

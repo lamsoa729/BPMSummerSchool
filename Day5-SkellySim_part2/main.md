@@ -20,7 +20,7 @@
 
 # Rotating centrosomes
 ### David Stein 
-#### [Presentation (click me)](assets/Asters.pdf)
+#### [PDF Presentation (click me)](assets/Asters.pdf)
 
 
 

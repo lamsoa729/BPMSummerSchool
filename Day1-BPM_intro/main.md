@@ -27,29 +27,32 @@
 
 
 ## Nikhil Agrawal
-### [presentation (click me)](images/CCBIntro_NikhilRAgrawal.pdf)
+* [PDF presentation](presentations/CCBIntro_NikhilRAgrawal.pdf)
 
 
 ## Staci Bell
-### [presentation (click me)](images/slide_stacibell.pdf)
+* [PDF presentation](presentations/slide_stacibell.pdf)
 
 
 ## Sidney Holden
-### [presentation (click me)](images/ccb_intro_slide_Sidney_Holden.pdf)
+* [PDF presentation](presentations/ccb_intro_slide_Sidney_Holden.pdf)
 
 
 ##  Geoffrey Woollard
-### [presentation (click me)](images/poster_geoff.pdf)
+* [PDF presentation](presentations/poster_geoff.pdf)
 
 
 ## Ana Cristina Molina Taborda
-### [presentation (click me)](images/CCB_intro_ana_cristina_molina_taborda.pdf)
+* [PDF presentation](presentations/CCB_intro_ana_cristina_molina_taborda.pdf)
 
 
 
 # Intro to resources available from SCC to the Cluster
 
 ### Speaker: Geraud Krawezik
+
+* [PDF presentation](presentations/SCC_Intro_Geraud_krawezik.pdf)
+* [](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/)
 
 
 
