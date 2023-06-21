@@ -29,19 +29,22 @@ This has some useful tools for viewing HDF5 files. We will use it to view the da
 
 # _ChromaLENS_: Long flexible biopolymers
 ### Adam Lamson
-#### [Presentation (click me)](presentations/Long_flexible_biofilaments.pdf)
+* [PDF Presentation](presentations/Long_flexible_biofilaments.pdf)
+* [Keynote](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/Long_flexible_biofilaments)
 
 
 
 # Actin, motors, and confinment modeling
 ### Dimitrios Vavylonis
-#### [Presentation (click me)](presentations/BPM_software_fi_23.pdf)
+* [PDF Presentation](presentations/BPM_software_fi_23.pdf)
+* [Powerpoint](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/BPM_software_fi_23.pptx)
 
 
 
 # Growing bacteria colonies
 ### Taeyoon Kim
-#### [Presentation (click me)](presentations/Workshop_06072023_Taeyoon_Kim.pdf)
+* [PDF Presentation](presentations/Workshop_06072023_Taeyoon_Kim.pdf)
+* [Powerpoint](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/Workshop_06072023_Taeyoon_Kim.pptx)
 
 
 

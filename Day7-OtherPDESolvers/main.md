@@ -21,6 +21,7 @@
 
 # Surfacefun: A MATLAB package for solving PDEs on curved surfaces
 ### Speaker: Dan Fortunato
+- [PDF Presentation](presentations/surfacefun_compressed.pdf)
 - [Paper](https://arxiv.org/abs/2210.00022)
 
 

@@ -27,7 +27,7 @@
 # Oscillating active dipolar flows
 ### Brato Chakrabarti
 * [PDF Presentation](presentations/BPM_summer_oscillating_fluid.pdf)
-* [Keynote download](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/BPM_summer_oscillating_fluid.key)
+* [Keynote](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/BPM_summer_oscillating_fluid.key)
 
 
 
