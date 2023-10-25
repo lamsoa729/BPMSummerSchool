@@ -56,13 +56,13 @@ Collection of resources for the Biophysical Modeling Software Summer School
 | ~11:10AM | Break|
 | ~11:20AM | Tutorial: Visualizing Dedalus and free play (active fluid simulations) <br /> Instructor: **Keaton Burns**|
 | **Day 7  (Tuesday 6/13)** | **PDE solvers/methods (part 2: General surfaces)**|
-| 2:00PM | Computation methods (Fast spectral solver) <br />  Speaker: **David Stein** | 
-| 2:30PM | Computation methods (Fast spectral solver continued) <br />  Speaker: **Dan Fortunato** |
+| 2:00PM | Computational methods (Function intention) <br />  Speaker: **David Stein** | 
+| 2:30PM | Compuational methods (Surfacefun) <br />  Speaker: **Dan Fortunato** |
 | 3:00PM | Break |
-| 3:10PM | Current projects (Polarization of cells) <br /> Speaker: **Pearson Miller**|
-| 3:40PM | Tutorial: Solving PDEs on curved surfaces<br /> Instructor: **Dan Fortunato**|
+| 3:10PM | Current projects (Cell polarization) <br /> Speaker: **Pearson Miller**|
+| 3:40PM | Tutorial: Using Surfacefun<br /> Instructor: **Dan Fortunato**|
 | ~4:10PM | Break|
-| ~4:20PM | Tutorial: Solving PDEs on curved surfaces (continued) <br /> Instructor: **David Stein**|
+| ~4:20PM | Tutorial: IPDE <br /> Instructor: **David Stein**|
 | **Day 8  (Wednesday 6/14)** | **Advanced cluster usage**|
 | 9:00AM | Running programs and environment management  <br />  Speaker: **Chris Edelmaier**| 
 | 10:00AM | Break |
