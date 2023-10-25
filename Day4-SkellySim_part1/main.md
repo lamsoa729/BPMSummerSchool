@@ -6,14 +6,13 @@ https://github.com/flatironinstitute/SkellySim
 
 | Day 4  (Thursday 6/8) | SkellySim (part 1)                                                               |
 |-----------------------|----------------------------------------------------------------------------------|
-| 9:00AM                | Intro to SkellySim (**Robert Blackwell (SCC)**)                                  |
-| 9:30AM                | Computational methods of SkellySim <br /> **David Stein (CCB)**            |
-| 10:00AM               | Break                                                                            |
-| 10:10AM               | Tutorial: Running SkellySim for the first time <br /> **Robert Blackwell (SCC)** |
-| ~11:00AM              | Break                                                                            |
-| ~11:10AM              | Free play (Instructors: **Coordinators**)                                            |
-| ~11:40AM              | Visualizing with Blender (**Reza Farhadifar, CCB**)                              |
-|                       |                                                                                  |
+| 9:00AM | Intro to SkellySim <br /> Speaker: **Robert Blackwell** | 
+| 9:30AM | Computational methods of SkellySim <br /> Speaker: **David Stein**|
+| 10:00AM | Break |
+| 10:10AM | Tutorial: Running SkellySim for the first time <br /> Instructor: **Robert Blackwell**|
+| ~11:00AM | Break |
+| ~11:10AM | Free play <br /> Speaker: **Coordinators**|
+| ~11:40AM | Visualizing with Blender <br /> Speaker: **Reza Farhadifar**|
 
 
 
@@ -34,7 +33,6 @@ https://github.com/flatironinstitute/SkellySim
   * Fibers: Microtubules or other flexible filaments
   * Bodies: Smooth 'rigid' objects like organelles or MTOCs
   * Periphery: Smooth/convex containing volume (cell boundary)
-
 
 
 ## Why is SkellySim?
@@ -107,7 +105,6 @@ https://github.com/flatironinstitute/SkellySim
   * `blender` for visualization
 * ~6800 lines of `C++`
 * ~4200 lines of `python`
-
 
 
 ## Some samples of what SkellySim can do

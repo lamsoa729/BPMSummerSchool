@@ -11,7 +11,7 @@
 | 9:20AM | Go around presentation (~5 min/person) <br /> Speaker: **Students** |
 | 10:10AM | Break |
 | 10:20AM | Intro to resources available to SCC and Cluster <br /> Speaker: **Geraud Krawezik** |
-| ~11:00AM | Tutorial: Pre-workshop software installation and cluster setup  <br /> Instructors: **Adam and Reza** |
+| ~11:00AM | Tutorial: Pre-workshop software installation and cluster setup  <br /> Instructors: **Adam Lamson/Reza Farhadifar** |
 
 
 

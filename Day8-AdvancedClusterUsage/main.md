@@ -2,7 +2,7 @@
 
 | **Day 8  (Wednesday 6/14)** | **Advanced cluster usage**|
 | --- | --- |
-| 9:00AM | Getting programs running/environment management <br />  Speaker: **Chris**| 
+| 9:00AM | Running programs and environment management <br />  Speaker: **Chris**| 
 | 10:00AM | Break |
 | 10:10AM | Tutorial: Slurm <br /> Speaker: **Chris**|
 | 10:30AM | Tutorial: Large batch runs with DisBatch <br /> Instructor: **Nick**|
@@ -435,6 +435,7 @@ sbatch -n 100 -c 3 -p scc -t 1-0 disBatch Tasks
 
 
 # Testing Code for Correctness and Efficiency
+### Vikram Mulligan
 
 
 

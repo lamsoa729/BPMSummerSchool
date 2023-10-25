@@ -6,13 +6,13 @@
 
 | **Day 6 (Mon 6/12)** | **PDE solvers/methods (part 1: Dedalus)**|
 | --- | --- |
-| 9:00AM | Intro to Dedalus <br />  Speaker: **Keaton** |
-| 9:45AM | Current projects (Oscillating active dipolar flows) <br /> Speaker: **Brato** |
+| 9:00AM | Intro to Dedalus <br />  Speaker: **Keaton Burns** | 
+| 9:45AM | Current projects (Oscillating active dipolar flows) <br /> Speaker: **Brato Chakrabarti** |
 | 10:10AM | Break |
-| 10:20AM | Current projects (Heterochromatin condensation) <br /> Speaker: **Alex**|
-| 10:40AM | Tutorial: Running Dedalus<br /> Instructor: **Keaton**|
+| 10:20AM | Current projects (Heterochromatin condensation) <br /> Speaker: **Alex Rautu**|
+| 10:40AM | Tutorial: Running Dedalus<br /> Instructor: **Keaton Burns**|
 | ~11:10AM | Break|
-| ~11:20AM | Tutorial: Visualizing Dedalus and free play (active fluids) <br /> Instructor: **Keaton**|
+| ~11:20AM | Tutorial: Visualizing Dedalus and free play (active fluids) <br /> Instructor: **Keaton Burns**|
 
 
 

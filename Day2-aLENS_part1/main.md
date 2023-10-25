@@ -9,13 +9,13 @@ https://lamsoa729-alens.readthedocs.io/en/latest/quickstart.html
 
 | Day 2  (Tuesday 6/6) | aLENS (part 1) |
 | --- | --- |
-| 2:00PM | Introduction to _aLENS_ (what can it do) <br /> Speaker: Adam |
-| 2:30PM | A peek into the numerical methods behind _aLENS_ <br /> Speaker: Bryce |
+| 2:00PM | Introduction to _aLENS_ (what can it do?) <br /> Speaker: **Adam Lamson** |
+| 2:30PM | A peek into the numerical methods behind _aLENS_  <br /> Speaker: **Bryce Palmer** |
 | 3:00PM | Break |
-| 3:10PM | Tutorial: Running _aLENS_ for the first time <br /> Instructor: Adam |
-| ~3:45PM | Tutorial: Paraview and visualizing data <br /> Instructors: Adam and Bryce|
+| 3:10PM | Tutorial: Running _aLENS_ for the first time <br /> Instructor: **Adam Lamson** |
+| ~3:45PM | Tutorial: Paraview and visualizing <br /> Instructor: **Adam Lamson/Bryce Palmer**|
 | ~4:00PM | Break  |
-| ~4:10PM | Explanation of parameters and playing with simulations |
+| ~4:10PM | Parameter explanation and playing with simulations  <br /> Instructor: **Adam Lamson**|
 
 
 ## Pre-tutorial software installation
@@ -73,7 +73,7 @@ It automatically performs
 
 ## Example domain decomposition:
 
-![domain_decom_1.png](images/domain_decom_1.png)
+<img src="images/domain_decom_1.png" alt="APGD_path.png" width="800"/>       
 
 
 ## An important caveat to be aware of
@@ -86,7 +86,9 @@ This can lead to load imbalance and increased communication costs/computation ti
 ## Example with poor load balancing 
 
 If we have a large number of springs in our upper left-hand corner, then the red process is now overloaded with work, containing 18 objects, whereas the other processes have 4-5 objects. 
-![domain_decom_2.png](images/domain_decom_2.png)
+
+<img src="images/domain_decom_2.png" alt="APGD_path.png" width="500"/>       
+<!-- ![domain_decom_2.png](images/domain_decom_2.png) -->
 
 As a result, aLENS performs best when the distribution of springs is similar to the distribution of particles. If you have strong differences between the two, that's fine; it'll just cause some inefficiency. 
 
@@ -156,7 +158,8 @@ Thogether, these constraints form a constrained convex optimization problem, whi
    ```
    This will be the path to your data folder. You will need to replace `<path/to/my_alens_data>` with this path in the next step.
 
-1. Create and run a docker container from the image pulled from dockerhub
+
+4. Create and run a docker container from the image pulled from dockerhub
    ```bash
    docker run --volume=<path/to/my_alens_data>:/root/Run --name alens -dit lamsoa729/alens:latest
    ```
@@ -173,8 +176,10 @@ You now have access to an environment that can run aLENS but will create data fi
       ```bash
       docker exec -it alens /bin/bash
       ```
+
     * For docker desktop, click the running `alens` container while in the containers section
-      ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.58.11_PM.png)
+      <!-- ![Screen Shot 2022-11-14 at 5.08.59 PM.png](images/Screenshot_2023-02-02_at_1.58.11_PM.png) -->
+      <img src="images/Screenshot_2023-02-02_at_1.58.11_PM.png" alt="docker_desktop" width="500"/>       
 
 
       * then click the `terminal` tab in the upper middle of the window 
