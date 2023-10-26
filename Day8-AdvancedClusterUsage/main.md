@@ -436,7 +436,8 @@ sbatch -n 100 -c 3 -p scc -t 1-0 disBatch Tasks
 
 # Testing Code for Correctness and Efficiency
 ### Vikram Mulligan
-
+* [PDF Presentation](presentations/2023_06_14_TestingParallelism_VKMulligan.pdf)
+* [Powerpoint](https://users.flatironinstitute.org/~alamson/BPMSummerSchool_2023/2023_06_14_TestingParallelism_VKMulligan.pptx)
 
 
 

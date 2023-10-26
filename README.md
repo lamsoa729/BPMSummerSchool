@@ -25,10 +25,10 @@ Collection of resources for the Biophysical Modeling Software Summer School
 | ~4:00PM | Break  |
 | ~4:10PM | Parameter explanation and playing with simulations <br /> Instructor: **Adam Lamson**|
 | **Day 3  (Wednesday 6/7)** | **aLENS (part 2)**|
-| 9:00AM | Variations and current projects (Flexible filaments and transient networks) <br /> Speaker: **Adam Lamson** | 
-| 9:30AM | Variations and current projects (Semi-flexible and growing filaments) <br /> Speaker: **Dimitrios Vavylonis** |
+| 9:00AM | Current projects (Flexible filaments and transient networks) <br /> Speaker: **Adam Lamson** | 
+| 9:30AM | Current projects (Semi-flexible and growing filaments) <br /> Speaker: **Dimitrios Vavylonis** |
 | 10:00AM | Break |
-| 10:10AM | Variations and current projects (Bacterial growth) <br /> Speaker: **Taeyoon Kim**|
+| 10:10AM | Current projects (Bacterial growth) <br /> Speaker: **Taeyoon Kim**|
 | 10:40AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: **Adam Lamson** |
 | ~11:10AM | Break|
 | ~11:20AM | Tutorial: Analysis package for aLENS and free play <br /> Instructor: **Adam Lamson** |
