@@ -152,4 +152,4 @@ This should bring you to the jupyter notebook.
 
 # Visualizing with Blender
 ### Reza Farhadifar
-<!-- #### [Presentation (click me)](assets/Long_flexible_biofilaments.pdf) -->
+#### [Presentation (click me)](assets/Blender.pdf)
